@@ -1,0 +1,65 @@
+{
+    "kategori": [
+        {
+            "nama": "GOLONGAN 1 JUZ",
+            "paket": [
+                {
+                    "nama": "Paket 1",
+                    "soal": [
+                        {
+                            "nama": "Soal 1",
+                            "halaman": 15
+                        },
+                        {
+                            "nama": "Soal 2",
+                            "halaman": 20
+                        },
+                        {
+                            "nama": "Soal 3",
+                            "halaman": 25
+                        }
+                    ]
+                },
+                {
+                    "nama": "Paket 2",
+                    "soal": [
+                        {
+                            "nama": "Soal 1",
+                            "halaman": 30
+                        },
+                        {
+                            "nama": "Soal 2",
+                            "halaman": 35
+                        },
+                        {
+                            "nama": "Soal 3",
+                            "halaman": 40
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nama": "GOLONGAN 5 JUZ",
+            "paket": [
+                {
+                    "nama": "Paket A",
+                    "soal": [
+                        {
+                            "nama": "Soal 1",
+                            "halaman": 100
+                        },
+                        {
+                            "nama": "Soal 2",
+                            "halaman": 110
+                        },
+                        {
+                            "nama": "Soal 3",
+                            "halaman": 120
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
