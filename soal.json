@@ -1,65 +1,74 @@
 {
-    "kategori": [
+  "kategori": [
+    {
+      "nama": "GOLONGAN 1 JUZ",
+      "paket": [
         {
-            "nama": "GOLONGAN 1 JUZ",
-            "paket": [
-                {
-                    "nama": "Paket 1",
-                    "soal": [
-                        {
-                            "nama": "Soal 1",
-                            "halaman": 15
-                        },
-                        {
-                            "nama": "Soal 2",
-                            "halaman": 20
-                        },
-                        {
-                            "nama": "Soal 3",
-                            "halaman": 25
-                        }
-                    ]
-                },
-                {
-                    "nama": "Paket 2",
-                    "soal": [
-                        {
-                            "nama": "Soal 1",
-                            "halaman": 30
-                        },
-                        {
-                            "nama": "Soal 2",
-                            "halaman": 35
-                        },
-                        {
-                            "nama": "Soal 3",
-                            "halaman": 40
-                        }
-                    ]
-                }
-            ]
+          "nama": "Paket 1",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 15,
+              "deskripsi": "Al-Baqarah: 92"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 20,
+              "deskripsi": "Al-Baqarah: 127"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 25,
+              "deskripsi": "Al-Baqarah: 164"
+            }
+          ]
         },
         {
-            "nama": "GOLONGAN 5 JUZ",
-            "paket": [
-                {
-                    "nama": "Paket A",
-                    "soal": [
-                        {
-                            "nama": "Soal 1",
-                            "halaman": 100
-                        },
-                        {
-                            "nama": "Soal 2",
-                            "halaman": 110
-                        },
-                        {
-                            "nama": "Soal 3",
-                            "halaman": 120
-                        }
-                    ]
-                }
-            ]
+          "nama": "Paket 2",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 30,
+              "deskripsi": "Al-Baqarah: 191"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 35,
+              "deskripsi": "Al-Baqarah: 219"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 40,
+              "deskripsi": "Al-Baqarah: 246"
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "nama": "GOLONGAN 5 JUZ",
+      "paket": [
+        {
+          "nama": "Paket A",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 100,
+              "deskripsi": "An-Nisa': 135"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 110,
+              "deskripsi": "Al-Ma'idah: 9"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 120,
+              "deskripsi": "Al-Ma'idah: 67"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

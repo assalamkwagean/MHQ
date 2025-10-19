@@ -62,9 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const createSoalItem = (soal, katIndex, pakIndex, soalIndex) => {
         const div = document.createElement('div');
         div.className = 'soal-item';
+        // Tambahkan input untuk deskripsi, pastikan tidak error jika deskripsi tidak ada
+        const deskripsi = soal.deskripsi || '';
         div.innerHTML = `
             <input type="text" value="${soal.nama}" class="soal-name" placeholder="Nama Soal" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
             <input type="number" value="${soal.halaman}" class="soal-halaman" placeholder="Halaman" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
+            <input type="text" value="${deskripsi}" class="soal-deskripsi" placeholder="Deskripsi (e.g., Al-Baqarah: 155)" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
             <button class="btn btn-danger" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">Hapus</button>
         `;
         return div;
@@ -82,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const addSoalHandler = (e) => {
         const { katIndex, pakIndex } = e.target.dataset;
-        soalData.kategori[katIndex].paket[pakIndex].soal.push({ nama: "Soal Baru", halaman: 1 });
+        // Tambahkan field deskripsi saat membuat soal baru
+        soalData.kategori[katIndex].paket[pakIndex].soal.push({ nama: "Soal Baru", halaman: 1, deskripsi: "" });
         renderEditor();
     };
     const deleteHandler = (e) => {
@@ -100,28 +104,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Fungsi Simpan ---
     const saveAndDownload = () => {
-        // Buat objek baru untuk menyimpan data dari DOM
         const newData = { kategori: [] };
-
-        // Loop melalui setiap grup kategori di DOM
         document.querySelectorAll('.editor-group:not(.paket-group)').forEach((katDiv, katIndex) => {
             const kategoriName = katDiv.querySelector(`.kategori-name[data-kat-index="${katIndex}"]`).value;
             const newKategori = { nama: kategoriName, paket: [] };
-
-            // Loop melalui setiap grup paket di dalam kategori
             katDiv.querySelectorAll(`.paket-group`).forEach((pakDiv) => {
-                // Pastikan paket ini milik kategori yang benar
                 if (pakDiv.querySelector(`.paket-name[data-kat-index="${katIndex}"]`)) {
                     const pakIndex = pakDiv.querySelector('.paket-name').dataset.pakIndex;
                     const paketName = pakDiv.querySelector(`.paket-name[data-pak-index="${pakIndex}"]`).value;
                     const newPaket = { nama: paketName, soal: [] };
-
-                    // Loop melalui setiap item soal di dalam paket
                     pakDiv.querySelectorAll('.soal-item').forEach((soalDiv) => {
                         const soalIndex = soalDiv.querySelector('.soal-name').dataset.soalIndex;
                         const soalName = soalDiv.querySelector(`.soal-name[data-soal-index="${soalIndex}"]`).value;
                         const soalHalaman = parseInt(soalDiv.querySelector(`.soal-halaman[data-soal-index="${soalIndex}"]`).value, 10);
-                        newPaket.soal.push({ nama: soalName, halaman: soalHalaman });
+                        // Ambil juga nilai dari deskripsi
+                        const soalDeskripsi = soalDiv.querySelector(`.soal-deskripsi[data-soal-index="${soalIndex}"]`).value;
+                        newPaket.soal.push({ nama: soalName, halaman: soalHalaman, deskripsi: soalDeskripsi });
                     });
                     newKategori.paket.push(newPaket);
                 }
@@ -129,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
             newData.kategori.push(newKategori);
         });
 
-        // Konversi ke JSON dan picu unduhan
         const jsonString = JSON.stringify(newData, null, 2);
         const blob = new Blob([jsonString], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
@@ -140,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-
         alert('File soal.json berhasil dibuat! Ganti file yang lama dengan yang baru ini.');
     };
 
@@ -156,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             editorContainer.innerHTML = '<p style="color:red;"><b>Error:</b> Gagal memuat <code>soal.json</code>. Mungkin file tersebut belum ada. Anda bisa membuat struktur baru di sini dan menyimpannya.</p>';
-            // Sediakan data kosong jika file tidak ditemukan, agar pengguna bisa mulai dari awal
             soalData = { kategori: [] };
             renderEditor();
         });

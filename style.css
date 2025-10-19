@@ -103,6 +103,12 @@ body, html {
     color: white;
 }
 
+.soal-active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
 /* Settings Page Styles */
 .settings-container {
     max-width: 800px;
