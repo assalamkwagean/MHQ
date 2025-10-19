@@ -46,6 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Recalculate open accordion heights (useful after PDF render or window resize)
+    const adjustOpenHeights = () => {
+        document.querySelectorAll('.paket-container, .soal-container').forEach(container => {
+            if (container.style.maxHeight) {
+                // set to current scrollHeight to keep it open after layout changes
+                container.style.maxHeight = container.scrollHeight + 'px';
+            }
+        });
+    };
+
     // Muat data soal dari soal.json dan bangun menu
     fetch('soal.json')
         .then(response => response.json())
@@ -78,8 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         const soalDiv = document.createElement('div');
                         soalDiv.classList.add('soal');
                         soalDiv.textContent = soal.nama;
-                        soalDiv.addEventListener('click', () => {
+                        // Pastikan klik pada item soal tidak memicu event parent (accordion toggle)
+                        soalDiv.addEventListener('click', (e) => {
+                            e.stopPropagation();
                             jumpToPage(soal.halaman);
+                            // adjust heights in case rendering the PDF changes layout
+                            requestAnimationFrame(adjustOpenHeights);
                         });
                         soalContainer.appendChild(soalDiv);
                     });
@@ -87,12 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     paketContainer.appendChild(soalContainer);
 
                     // Accordion logic untuk paket
-                    paketTitle.addEventListener('click', () => {
+                    paketTitle.addEventListener('click', (e) => {
+                        e.stopPropagation();
                         paketTitle.classList.toggle('active');
                         if (soalContainer.style.maxHeight) {
                             soalContainer.style.maxHeight = null;
                         } else {
-                            soalContainer.style.maxHeight = soalContainer.scrollHeight + "px";
+                            // use requestAnimationFrame to ensure accurate scrollHeight after style changes
+                            requestAnimationFrame(() => {
+                                soalContainer.style.maxHeight = soalContainer.scrollHeight + "px";
+                            });
                         }
                     });
                 });
@@ -101,15 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuSoalContainer.appendChild(kategoriDiv);
 
                 // Accordion logic untuk kategori
-                kategoriTitle.addEventListener('click', () => {
+                kategoriTitle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     kategoriTitle.classList.toggle('active');
                     if (paketContainer.style.maxHeight) {
                         paketContainer.style.maxHeight = null;
                     } else {
-                        paketContainer.style.maxHeight = paketContainer.scrollHeight + "px";
+                        requestAnimationFrame(() => {
+                            paketContainer.style.maxHeight = paketContainer.scrollHeight + "px";
+                        });
                     }
                 });
             });
+            // Jika ada perubahan ukuran jendela atau PDF yang dirender, perbaiki tinggi accordion
+            window.addEventListener('resize', adjustOpenHeights);
+            // Pastikan tinggi dihitung ulang setelah PDF dimuat/render
+            // (renderPage sudah memanggil page.render; kita panggil adjust pada frame berikutnya)
+            requestAnimationFrame(adjustOpenHeights);
         })
         .catch(error => {
             menuSoalContainer.innerHTML = `<p style="color: red;">Error: Gagal memuat soal.json.</p>`;
