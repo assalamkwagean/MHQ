@@ -87,9 +87,17 @@ document.addEventListener('DOMContentLoaded', () => {
     pdfViewerContainer.addEventListener('mouseleave', () => pdfHighlighter.style.visibility = 'hidden');
     pdfViewerContainer.addEventListener('mousemove', (e) => {
         if (isHighlighterActive) {
+            // e.pageY memberikan posisi Y relatif terhadap seluruh dokumen.
+            // Kita perlu offset dari container PDF itu sendiri.
             const rect = pdfViewerContainer.getBoundingClientRect();
-            // Adjust for scrolling inside the viewer
-            const y = e.clientY - rect.top + pdfViewerContainer.scrollTop - (pdfHighlighter.offsetHeight / 2);
+            // Posisi Y mouse relatif terhadap viewport + posisi scroll dokumen
+            const absoluteMouseY = e.clientY + window.scrollY;
+            // Posisi Y atas container PDF + posisi scroll dokumen
+            const containerAbsoluteY = rect.top + window.scrollY;
+
+            // Posisi mouse di dalam container = posisi absolut mouse - posisi absolut container + scroll internal container
+            const y = absoluteMouseY - containerAbsoluteY + pdfViewerContainer.scrollTop - (pdfHighlighter.offsetHeight / 2);
+
             pdfHighlighter.style.top = `${y}px`;
         }
     });
