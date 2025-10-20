@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeSoalElement = null;
     let isHighlighterActive = false;
     let zoomMode = 'page'; // 'page' or 'width'
+    let lastRelativeMouseY = 0; // Lacak posisi Y mouse terakhir relatif terhadap viewer
 
     // --- Highlighter Toggle Logic ---
     const setHighlighterState = (isActive) => {
@@ -83,24 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
     fitWidthBtn.addEventListener('click', () => { zoomMode = 'width'; renderPage(currentPage); });
     fitPageBtn.addEventListener('click', () => { zoomMode = 'page'; renderPage(currentPage); });
 
+    const updateHighlighterPosition = () => {
+        if (!isHighlighterActive) return;
+        const y = lastRelativeMouseY + pdfViewerContainer.scrollTop - (pdfHighlighter.offsetHeight / 2);
+        pdfHighlighter.style.top = `${y}px`;
+    };
+
     pdfViewerContainer.addEventListener('mouseenter', () => isHighlighterActive && (pdfHighlighter.style.visibility = 'visible'));
     pdfViewerContainer.addEventListener('mouseleave', () => pdfHighlighter.style.visibility = 'hidden');
+
     pdfViewerContainer.addEventListener('mousemove', (e) => {
-        if (isHighlighterActive) {
-            // e.pageY memberikan posisi Y relatif terhadap seluruh dokumen.
-            // Kita perlu offset dari container PDF itu sendiri.
-            const rect = pdfViewerContainer.getBoundingClientRect();
-            // Posisi Y mouse relatif terhadap viewport + posisi scroll dokumen
-            const absoluteMouseY = e.clientY + window.scrollY;
-            // Posisi Y atas container PDF + posisi scroll dokumen
-            const containerAbsoluteY = rect.top + window.scrollY;
-
-            // Posisi mouse di dalam container = posisi absolut mouse - posisi absolut container + scroll internal container
-            const y = absoluteMouseY - containerAbsoluteY + pdfViewerContainer.scrollTop - (pdfHighlighter.offsetHeight / 2);
-
-            pdfHighlighter.style.top = `${y}px`;
-        }
+        const rect = pdfViewerContainer.getBoundingClientRect();
+        // Hitung posisi Y mouse relatif terhadap elemen pdfViewerContainer
+        lastRelativeMouseY = e.clientY - rect.top;
+        updateHighlighterPosition();
     });
+
+    pdfViewerContainer.addEventListener('scroll', updateHighlighterPosition);
 
     // --- Initial Load ---
     const mushafUrl = './mushaf.pdf';
