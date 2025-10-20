@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeSoalElement = null;
     let isHighlighterActive = false;
     let zoomMode = 'page'; // 'page' or 'width'
-    let lastRelativeMouseY = 0; // Lacak posisi Y mouse terakhir relatif terhadap viewer
-
-    // --- Highlighter Toggle Logic ---
+    let lastOffsetY = 0; // Lacak posisi Y mouse terakhir relatif terhadap elemen (offset)
     const setHighlighterState = (isActive) => {
         isHighlighterActive = isActive;
         highlighterToggle.checked = isActive;
@@ -84,23 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
     fitWidthBtn.addEventListener('click', () => { zoomMode = 'width'; renderPage(currentPage); });
     fitPageBtn.addEventListener('click', () => { zoomMode = 'page'; renderPage(currentPage); });
 
+    // --- Event Listeners ---
     const updateHighlighterPosition = () => {
-        if (!isHighlighterActive) return;
-        const y = lastRelativeMouseY + pdfViewerContainer.scrollTop - (pdfHighlighter.offsetHeight / 2);
+        // Perhitungan top yang benar: posisi scroll saat ini + posisi Y mouse terakhir di dalam elemen - penyesuaian tengah
+        const y = pdfViewerContainer.scrollTop + lastOffsetY - (pdfHighlighter.offsetHeight / 2);
         pdfHighlighter.style.top = `${y}px`;
     };
 
-    pdfViewerContainer.addEventListener('mouseenter', () => isHighlighterActive && (pdfHighlighter.style.visibility = 'visible'));
-    pdfViewerContainer.addEventListener('mouseleave', () => pdfHighlighter.style.visibility = 'hidden');
-
-    pdfViewerContainer.addEventListener('mousemove', (e) => {
-        const rect = pdfViewerContainer.getBoundingClientRect();
-        // Hitung posisi Y mouse relatif terhadap elemen pdfViewerContainer
-        lastRelativeMouseY = e.clientY - rect.top;
-        updateHighlighterPosition();
+    pdfViewerContainer.addEventListener('mouseenter', () => {
+        if (isHighlighterActive) pdfHighlighter.style.visibility = 'visible';
     });
-
-    pdfViewerContainer.addEventListener('scroll', updateHighlighterPosition);
+    pdfViewerContainer.addEventListener('mouseleave', () => {
+        pdfHighlighter.style.visibility = 'hidden';
+    });
+    pdfViewerContainer.addEventListener('mousemove', (e) => {
+        if (isHighlighterActive) {
+            // e.offsetY memberikan posisi Y mouse relatif terhadap elemen target (pdfViewerContainer)
+            lastOffsetY = e.offsetY;
+            updateHighlighterPosition();
+        }
+    });
+    pdfViewerContainer.addEventListener('scroll', () => {
+        if (isHighlighterActive) updateHighlighterPosition();
+    });
 
     // --- Initial Load ---
     const mushafUrl = './mushaf.pdf';
