@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeSoalElement = null;
     let isHighlighterActive = false;
     let zoomMode = 'page'; // 'page' or 'width'
-    let lastOffsetY = 0; // Lacak posisi Y mouse terakhir relatif terhadap elemen (offset)
+    let currentViewport = null; // Store current viewport for highlighter calculations
+    let canvasOffset = { x: 0, y: 0 }; // Store canvas offset for stable positioning
+    let lastMouseEvent = null; // Track last mousemove event for scroll updates
+
+    // --- Highlighter Toggle Logic ---
     const setHighlighterState = (isActive) => {
         isHighlighterActive = isActive;
         highlighterToggle.checked = isActive;
@@ -51,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             viewport = page.getViewport({ scale: scale });
+            currentViewport = viewport; // Store viewport for highlighter calculations
 
             if (!canvas) {
                 canvas = document.createElement('canvas');
@@ -66,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPage = num;
                 updateNavButtons();
                 pdfViewerContainer.scrollTop = 0; // Scroll to top of new page
+                
+                // Update canvas offset after rendering
+                setTimeout(updateCanvasOffset, 10);
             });
         });
     };
@@ -82,28 +90,77 @@ document.addEventListener('DOMContentLoaded', () => {
     fitWidthBtn.addEventListener('click', () => { zoomMode = 'width'; renderPage(currentPage); });
     fitPageBtn.addEventListener('click', () => { zoomMode = 'page'; renderPage(currentPage); });
 
-    // --- Event Listeners ---
-    const updateHighlighterPosition = () => {
-        // Perhitungan top yang benar: posisi scroll saat ini + posisi Y mouse terakhir di dalam elemen - penyesuaian tengah
-        const y = pdfViewerContainer.scrollTop + lastOffsetY - (pdfHighlighter.offsetHeight / 2);
-        pdfHighlighter.style.top = `${y}px`;
+    pdfViewerContainer.addEventListener('mouseenter', () => isHighlighterActive && (pdfHighlighter.style.visibility = 'visible'));
+    pdfViewerContainer.addEventListener('mouseleave', () => pdfHighlighter.style.visibility = 'hidden');
+    // --- Universal Highlighter Function ---
+    const updateHighlighter = (e) => {
+        if (!isHighlighterActive || !canvas || !currentViewport) return;
+        
+        // Hitung langsung relatif terhadap .content agar tidak double-count scroll
+        const content = document.querySelector('.content');
+        if (!content) return;
+        const contentRect = content.getBoundingClientRect();
+        const canvasRect = canvas.getBoundingClientRect();
+        
+        // Batas canvas di dalam koordinat .content (CSS pixel)
+        const canvasTopInContent = canvasRect.top - contentRect.top;
+        const canvasBottomInContent = canvasRect.bottom - contentRect.top;
+        
+        // Target posisi top highlighter relatif ke .content
+        const desiredTop = e.clientY - contentRect.top - (pdfHighlighter.offsetHeight / 2);
+        
+        // Clamp agar tetap di dalam area canvas
+        const minTop = canvasTopInContent;
+        const maxTop = canvasBottomInContent - pdfHighlighter.offsetHeight;
+        const clampedTop = Math.max(minTop, Math.min(desiredTop, maxTop));
+        
+        pdfHighlighter.style.top = `${clampedTop}px`;
     };
 
-    pdfViewerContainer.addEventListener('mouseenter', () => {
-        if (isHighlighterActive) pdfHighlighter.style.visibility = 'visible';
-    });
-    pdfViewerContainer.addEventListener('mouseleave', () => {
-        pdfHighlighter.style.visibility = 'hidden';
-    });
-    pdfViewerContainer.addEventListener('mousemove', (e) => {
-        if (isHighlighterActive) {
-            // e.offsetY memberikan posisi Y mouse relatif terhadap elemen target (pdfViewerContainer)
-            lastOffsetY = e.offsetY;
-            updateHighlighterPosition();
+    // --- Update Canvas Offset on Scroll ---
+    const updateCanvasOffset = () => {
+        if (canvas) {
+            const rect = pdfViewerContainer.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+            canvasOffset.x = canvasRect.left - rect.left;
+            canvasOffset.y = canvasRect.top - rect.top;
         }
+    };
+
+    // --- Event Listeners ---
+    pdfViewerContainer.addEventListener('mousemove', (e) => {
+        lastMouseEvent = e;
+        updateHighlighter(e);
     });
     pdfViewerContainer.addEventListener('scroll', () => {
-        if (isHighlighterActive) updateHighlighterPosition();
+        updateCanvasOffset();
+        if (lastMouseEvent) updateHighlighter(lastMouseEvent);
+    });
+    pdfViewerContainer.addEventListener('wheel', () => {
+        // Ensure highlighter stays aligned during wheel scrolling
+        updateCanvasOffset();
+        if (lastMouseEvent) updateHighlighter(lastMouseEvent);
+    }, { passive: true });
+    window.addEventListener('resize', () => {
+        updateCanvasOffset();
+        if (lastMouseEvent) updateHighlighter(lastMouseEvent);
+    });
+
+    // --- Keyboard Navigation (Arrow Up/Down) ---
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+        // Ignore when typing in inputs/textareas/contenteditable
+        const target = e.target;
+        const tag = (target && target.tagName ? target.tagName.toLowerCase() : '');
+        if (tag === 'input' || tag === 'textarea' || (target && target.isContentEditable)) return;
+
+        if (e.key === 'ArrowUp' && currentPage > 1) {
+            e.preventDefault();
+            jumpToPage(currentPage - 1);
+        } else if (e.key === 'ArrowDown' && pdfDoc && currentPage < pdfDoc.numPages) {
+            e.preventDefault();
+            jumpToPage(currentPage + 1);
+        }
     });
 
     // --- Initial Load ---
