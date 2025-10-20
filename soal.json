@@ -1,25 +1,30 @@
 {
   "kategori": [
     {
-      "nama": "GOLONGAN 1 JUZ",
+      "nama": "5 Juz",
       "paket": [
         {
           "nama": "Paket 1",
           "soal": [
             {
               "nama": "Soal 1",
-              "halaman": 15,
-              "deskripsi": "Al-Baqarah: 92"
+              "halaman": 42,
+              "deskripsi": "Al Baqoroh 255 - 257"
             },
             {
               "nama": "Soal 2",
-              "halaman": 20,
-              "deskripsi": "Al-Baqarah: 127"
+              "halaman": 24,
+              "deskripsi": "Al Baqoroh 158 - 163"
             },
             {
               "nama": "Soal 3",
-              "halaman": 25,
-              "deskripsi": "Al-Baqarah: 164"
+              "halaman": 2,
+              "deskripsi": "Al Fatihah 1 - Al Baqoroh 5"
+            },
+            {
+              "nama": "Soal 4",
+              "halaman": 83,
+              "deskripsi": "An Nisa 33 - 35"
             }
           ]
         },
@@ -28,43 +33,158 @@
           "soal": [
             {
               "nama": "Soal 1",
-              "halaman": 30,
-              "deskripsi": "Al-Baqarah: 191"
+              "halaman": 25,
+              "deskripsi": "Al Baqoroh 166 - 170"
             },
             {
               "nama": "Soal 2",
-              "halaman": 35,
-              "deskripsi": "Al-Baqarah: 219"
+              "halaman": 50,
+              "deskripsi": "Ali Imron 7 - 12"
             },
             {
               "nama": "Soal 3",
-              "halaman": 40,
-              "deskripsi": "Al-Baqarah: 246"
+              "halaman": 10,
+              "deskripsi": "Al Baqoroh 67 - 71"
+            },
+            {
+              "nama": "Soal 4",
+              "halaman": 81,
+              "deskripsi": "An Nisa 23 - 24"
+            }
+          ]
+        },
+        {
+          "nama": "Paket 3",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 43,
+              "deskripsi": "Al Baqoroh 258 - 259"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 22,
+              "deskripsi": "Al Baqoroh 142 - 144"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 3,
+              "deskripsi": "Al Baqoroh 14 - 19"
+            },
+            {
+              "nama": "Soal 4",
+              "halaman": 91,
+              "deskripsi": "An Nisa 80 - 83"
+            }
+          ]
+        },
+        {
+          "nama": "Paket 4",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 21,
+              "deskripsi": "Al Baqoroh 139 - 142"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 63,
+              "deskripsi": "Ali Imron 102 - 105"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 57,
+              "deskripsi": "Ali Imron 53 - 56"
+            },
+            {
+              "nama": "Soal 4",
+              "halaman": 85,
+              "deskripsi": "An Nisa 43 - 45"
             }
           ]
         }
       ]
     },
     {
-      "nama": "GOLONGAN 5 JUZ",
+      "nama": "Juz 30",
       "paket": [
         {
-          "nama": "Paket A",
+          "nama": "Paket 1",
           "soal": [
             {
               "nama": "Soal 1",
-              "halaman": 100,
-              "deskripsi": "An-Nisa': 135"
+              "halaman": 582,
+              "deskripsi": "An Naba 1 - 16"
             },
             {
               "nama": "Soal 2",
-              "halaman": 110,
-              "deskripsi": "Al-Ma'idah: 9"
+              "halaman": 588,
+              "deskripsi": "Al Muthoffifin 7-22"
             },
             {
               "nama": "Soal 3",
-              "halaman": 120,
-              "deskripsi": "Al-Ma'idah: 67"
+              "halaman": 593,
+              "deskripsi": "Al Fajr 19-30"
+            }
+          ]
+        },
+        {
+          "nama": "Paket 2",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 595,
+              "deskripsi": "Al Lail 8-21"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 588,
+              "deskripsi": "Al Muthoffifin 23-31"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 596,
+              "deskripsi": "Ad Dhuha - Al Insyirah"
+            }
+          ]
+        },
+        {
+          "nama": "Paket 3",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 592,
+              "deskripsi": "Al Ghosiyah 17- Al Fajr 1"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 591,
+              "deskripsi": "Ath Thoriq 8- Al A'la 7"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 594,
+              "deskripsi": "Al Balad 9 - Asy Syams 5"
+            }
+          ]
+        },
+        {
+          "nama": "Paket 4",
+          "soal": [
+            {
+              "nama": "Soal 1",
+              "halaman": 587,
+              "deskripsi": "Al Infithar 15- Al Muthoffifin 6"
+            },
+            {
+              "nama": "Soal 2",
+              "halaman": 585,
+              "deskripsi": "Abasa 30 - At Takwir 1"
+            },
+            {
+              "nama": "Soal 3",
+              "halaman": 590,
+              "deskripsi": "Al Buruj 10-22"
             }
           ]
         }
