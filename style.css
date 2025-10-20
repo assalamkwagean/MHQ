@@ -245,7 +245,14 @@ body, html {
     height: 100%;
     box-shadow: 0 0 10px var(--shadow-color);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: auto; /* Aktifkan scrolling */
+}
+
+.pdf-navigation button.active {
+    background-color: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+    opacity: 1;
 }
 #pdf-viewer canvas {
     display: block;
