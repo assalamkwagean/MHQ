@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pdfHighlighter = document.getElementById('pdf-highlighter');
     const prevPageBtn = document.getElementById('prev-page');
     const nextPageBtn = document.getElementById('next-page');
+    const highlighterToggle = document.getElementById('highlighter-toggle');
     const mushafUrl = './mushaf.pdf';
 
     let pdfDoc = null;
@@ -12,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas = null;
     let ctx = null;
     let activeSoalElement = null;
+    let isHighlighterActive = false;
+
+    // --- Highlighter Toggle Logic ---
+    const setHighlighterState = (isActive) => {
+        isHighlighterActive = isActive;
+        highlighterToggle.checked = isActive;
+        localStorage.setItem('highlighterActive', isActive);
+    };
+
+    // Load saved state
+    const savedHighlighterState = localStorage.getItem('highlighterActive') === 'true';
+    setHighlighterState(savedHighlighterState);
+
+    highlighterToggle.addEventListener('change', (e) => {
+        setHighlighterState(e.target.checked);
+        if (!e.target.checked) {
+            pdfHighlighter.style.visibility = 'hidden';
+        }
+    });
 
     const updateNavButtons = () => {
         prevPageBtn.disabled = currentPage <= 1;
@@ -63,7 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Highlighter Logic ---
     pdfViewerContainer.addEventListener('mouseenter', () => {
-        pdfHighlighter.style.visibility = 'visible';
+        if (isHighlighterActive) {
+            pdfHighlighter.style.visibility = 'visible';
+        }
     });
 
     pdfViewerContainer.addEventListener('mouseleave', () => {
@@ -71,12 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     pdfViewerContainer.addEventListener('mousemove', (e) => {
-        const rect = pdfViewerContainer.getBoundingClientRect();
-        // e.clientY adalah posisi Y mouse di viewport
-        // rect.top adalah posisi Y container PDF di viewport
-        // Kurangi setengah tinggi highlighter agar kursor berada di tengah
-        const y = e.clientY - rect.top - (pdfHighlighter.offsetHeight / 2);
-        pdfHighlighter.style.top = `${y}px`;
+        if (isHighlighterActive) {
+            const rect = pdfViewerContainer.getBoundingClientRect();
+            const y = e.clientY - rect.top - (pdfHighlighter.offsetHeight / 2);
+            pdfHighlighter.style.top = `${y}px`;
+        }
     });
 
     // --- Accordion Logic ---
