@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuSoalContainer = document.getElementById('menu-soal');
     const pdfViewerContainer = document.getElementById('pdf-viewer');
+    const prevPageBtn = document.getElementById('prev-page');
+    const nextPageBtn = document.getElementById('next-page');
     const mushafUrl = './mushaf.pdf';
 
     let pdfDoc = null;
@@ -9,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas = null;
     let ctx = null;
     let activeSoalElement = null;
+
+    // Fungsi untuk memperbarui status tombol navigasi
+    const updateNavButtons = () => {
+        prevPageBtn.disabled = currentPage <= 1;
+        nextPageBtn.disabled = currentPage >= pdfDoc.numPages;
+    };
 
     const renderPage = num => {
         pdfDoc.getPage(num).then(page => {
@@ -21,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.height = viewport.height;
             canvas.width = viewport.width;
             const renderContext = { canvasContext: ctx, viewport: viewport };
-            page.render(renderContext);
-            currentPage = num;
+            page.render(renderContext).promise.then(() => {
+                currentPage = num;
+                updateNavButtons();
+            });
         });
     };
 
@@ -32,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(err => {
         pdfViewerContainer.innerHTML = `<p style="color: red; text-align: center; padding: 20px;">Error: Tidak dapat memuat file <strong>mushaf.pdf</strong>.</p>`;
         console.error(err);
+        // Sembunyikan tombol jika PDF gagal dimuat
+        document.querySelector('.pdf-navigation').style.display = 'none';
     });
 
     const jumpToPage = pageNum => {
@@ -39,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
             renderPage(pageNum);
         }
     };
+
+    // Event listeners untuk tombol navigasi
+    prevPageBtn.addEventListener('click', () => {
+        if (currentPage <= 1) return;
+        jumpToPage(currentPage - 1);
+    });
+
+    nextPageBtn.addEventListener('click', () => {
+        if (currentPage >= pdfDoc.numPages) return;
+        jumpToPage(currentPage + 1);
+    });
 
     fetch('soal.json')
         .then(response => response.json())
@@ -65,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const soalDiv = document.createElement('div');
                         soalDiv.classList.add('soal');
                         soalDiv.textContent = soal.nama;
-                        soalDiv.dataset.id = `soal-${katIndex}-${pakIndex}-${soalIndex}`; // Add unique stable ID
+                        soalDiv.dataset.id = `soal-${katIndex}-${pakIndex}-${soalIndex}`;
 
                         soalDiv.addEventListener('click', () => {
                             jumpToPage(soal.halaman);
