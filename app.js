@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuSoalContainer = document.getElementById('menu-soal');
     const pdfViewerContainer = document.getElementById('pdf-viewer');
+    const pdfHighlighter = document.getElementById('pdf-highlighter');
     const prevPageBtn = document.getElementById('prev-page');
     const nextPageBtn = document.getElementById('next-page');
     const mushafUrl = './mushaf.pdf';
@@ -60,10 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
         jumpToPage(currentPage + 1);
     });
 
+    // --- Highlighter Logic ---
+    pdfViewerContainer.addEventListener('mouseenter', () => {
+        pdfHighlighter.style.visibility = 'visible';
+    });
+
+    pdfViewerContainer.addEventListener('mouseleave', () => {
+        pdfHighlighter.style.visibility = 'hidden';
+    });
+
+    pdfViewerContainer.addEventListener('mousemove', (e) => {
+        const rect = pdfViewerContainer.getBoundingClientRect();
+        // e.clientY adalah posisi Y mouse di viewport
+        // rect.top adalah posisi Y container PDF di viewport
+        // Kurangi setengah tinggi highlighter agar kursor berada di tengah
+        const y = e.clientY - rect.top - (pdfHighlighter.offsetHeight / 2);
+        pdfHighlighter.style.top = `${y}px`;
+    });
+
     // --- Accordion Logic ---
     const updateParentMaxHeight = (element, change) => {
         let parent = element.parentElement;
-        while (parent && parent.classList.contains('paket-container') || parent.classList.contains('kategori-container')) {
+        while (parent && (parent.classList.contains('paket-container') || parent.classList.contains('kategori-container'))) {
              if (parent.style.maxHeight) {
                 parent.style.maxHeight = (parseInt(parent.style.maxHeight) + change) + 'px';
             }

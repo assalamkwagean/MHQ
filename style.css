@@ -158,6 +158,20 @@ body, html {
     margin: auto; /* pusatkan canvas */
 }
 
+#pdf-highlighter {
+    position: absolute;
+    top: 0;
+    left: 15px; /* Sesuaikan dengan padding .content */
+    right: 15px; /* Sesuaikan dengan padding .content */
+    height: 25px; /* Atur tinggi highlighter */
+    background-color: rgba(255, 255, 0, 0.3); /* Kuning semi-transparan */
+    border: 1px solid rgba(255, 204, 0, 0.5);
+    pointer-events: none; /* Biarkan klik "tembus" ke PDF */
+    visibility: hidden; /* Sembunyikan secara default */
+    z-index: 10;
+    border-radius: 4px;
+}
+
 
 /* PDF Navigation Buttons */
 .pdf-navigation {
