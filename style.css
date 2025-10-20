@@ -273,6 +273,7 @@ body, html {
     z-index: 10;
     border-radius: 4px;
     box-sizing: border-box; /* Pastikan padding/border tidak menambah lebar */
+    transform: translateZ(0); /* Force hardware acceleration */
 }
 
 
