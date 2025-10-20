@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let ctx = null;
     let activeSoalElement = null;
 
-    // Fungsi untuk memperbarui status tombol navigasi
     const updateNavButtons = () => {
         prevPageBtn.disabled = currentPage <= 1;
         nextPageBtn.disabled = currentPage >= pdfDoc.numPages;
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(err => {
         pdfViewerContainer.innerHTML = `<p style="color: red; text-align: center; padding: 20px;">Error: Tidak dapat memuat file <strong>mushaf.pdf</strong>.</p>`;
         console.error(err);
-        // Sembunyikan tombol jika PDF gagal dimuat
         document.querySelector('.pdf-navigation').style.display = 'none';
     });
 
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Event listeners untuk tombol navigasi
     prevPageBtn.addEventListener('click', () => {
         if (currentPage <= 1) return;
         jumpToPage(currentPage - 1);
@@ -62,6 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentPage >= pdfDoc.numPages) return;
         jumpToPage(currentPage + 1);
     });
+
+    // --- Accordion Logic ---
+    const updateParentMaxHeight = (element, change) => {
+        let parent = element.parentElement;
+        while (parent && parent.classList.contains('paket-container') || parent.classList.contains('kategori-container')) {
+             if (parent.style.maxHeight) {
+                parent.style.maxHeight = (parseInt(parent.style.maxHeight) + change) + 'px';
+            }
+            parent = parent.parentElement;
+        }
+    };
 
     fetch('soal.json')
         .then(response => response.json())
@@ -107,7 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     paketContainer.appendChild(soalContainer);
                     paketTitle.addEventListener('click', () => {
                         paketTitle.classList.toggle('active');
-                        soalContainer.style.maxHeight = soalContainer.style.maxHeight ? null : soalContainer.scrollHeight + "px";
+                        const change = soalContainer.scrollHeight;
+                        if (soalContainer.style.maxHeight) {
+                            soalContainer.style.maxHeight = null;
+                            updateParentMaxHeight(paketTitle, -change);
+                        } else {
+                            soalContainer.style.maxHeight = change + "px";
+                            updateParentMaxHeight(paketTitle, change);
+                        }
                     });
                 });
 
@@ -115,7 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuSoalContainer.appendChild(kategoriDiv);
                 kategoriTitle.addEventListener('click', () => {
                     kategoriTitle.classList.toggle('active');
-                    paketContainer.style.maxHeight = paketContainer.style.maxHeight ? null : paketContainer.scrollHeight + "px";
+                    const change = paketContainer.scrollHeight;
+                    if (paketContainer.style.maxHeight) {
+                        paketContainer.style.maxHeight = null;
+                    } else {
+                        paketContainer.style.maxHeight = change + "px";
+                    }
                 });
             });
         })
