@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 .container {
@@ -11,52 +14,155 @@ body, html {
     height: 100vh;
 }
 
+/* --- Sidebar --- */
 .sidebar {
     width: 30%;
-    min-width: 300px;
-    background-color: #343a40;
-    color: white;
-    padding: 20px;
+    min-width: 350px;
+    background-color: #ffffff;
+    padding: 25px;
     overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar-header {
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.app-header h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.app-header h2 span {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.sidebar h1 {
-    margin-bottom: 0;
-    font-size: 1.5em;
-    color: #f8f9fa;
+.menu-header h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #adb5bd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .settings-btn {
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-decoration: none;
-    color: white;
-    transition: transform 0.3s;
+    color: #adb5bd;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .settings-btn:hover {
     transform: rotate(45deg);
+    color: #007bff;
 }
 
+/* --- Accordion Menu --- */
+#menu-soal {
+    flex-grow: 1;
+}
+
+.kategori-title, .paket-title {
+    cursor: pointer;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+    user-select: none;
+    font-weight: 500;
+}
+
+.kategori-title:hover, .paket-title:hover {
+    background-color: #e9ecef;
+}
+
+.paket-container, .soal-container {
+    padding-left: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.soal {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.95em;
+}
+
+.soal:last-child {
+    border-bottom: none;
+}
+
+.soal:hover {
+    background-color: #e6f2ff;
+}
+
+.soal-active {
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.soal-active:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Content Area --- */
 .content {
     width: 70%;
     height: 100vh;
     overflow: hidden;
-    background-color: #495057;
-    position: relative; /* Diperlukan untuk positioning absolut anak */
+    background-color: #e9ecef;
+    position: relative;
+    padding: 15px;
+    box-sizing: border-box;
 }
+
+#pdf-viewer {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* pastikan canvas tidak keluar */
+}
+#pdf-viewer canvas {
+    display: block; /* hapus spasi aneh di bawah canvas */
+    margin: auto; /* pusatkan canvas */
+}
+
 
 /* PDF Navigation Buttons */
 .pdf-navigation {
     position: absolute;
-    right: 20px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -65,87 +171,33 @@ body, html {
 }
 
 .pdf-navigation button {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    font-size: 1.2em;
+    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.5em;
     cursor: pointer;
-    transition: background-color 0.3s;
-    opacity: 0.5;
+    transition: all 0.3s;
+    opacity: 0.7;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .pdf-navigation button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: white;
     opacity: 1;
+    transform: scale(1.1);
 }
 
 .pdf-navigation button:disabled {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(233, 236, 239, 0.5);
     cursor: not-allowed;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
-#pdf-viewer {
-    width: 100%;
-    height: 100%;
-}
 
-/* Accordion Menu Styles */
-.kategori-title, .paket-title {
-    cursor: pointer;
-    padding: 15px;
-    background-color: #495057;
-    border: 1px solid #6c757d;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-    user-select: none; /* Prevent text selection on click */
-}
-
-.kategori-title:hover, .paket-title:hover {
-    background-color: #6c757d;
-}
-
-.kategori-title::after, .paket-title::after {
-    content: '\\25B6'; /* Triangle pointing right */
-    float: right;
-    transition: transform 0.3s;
-}
-
-.active::after {
-    transform: rotate(90deg); /* Triangle pointing down */
-}
-
-.paket-container, .soal-container {
-    padding-left: 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.soal {
-    padding: 10px 15px;
-    background-color: #212529;
-    border-bottom: 1px solid #495057;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.soal:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-.soal-active {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-}
-
-/* Settings Page Styles */
+/* --- Settings Page --- */
 .settings-container {
     max-width: 800px;
     margin: 40px auto;
@@ -168,21 +220,31 @@ body, html {
     margin: 5px;
     text-decoration: none;
     display: inline-block;
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #dee2e6;
+    transition: background-color 0.3s;
 }
-
+.btn:hover {
+    background-color: #e9ecef;
+}
 .btn-primary {
     background-color: #007bff;
     color: white;
+    border-color: #007bff;
 }
-
+.btn-primary:hover {
+    background-color: #0056b3;
+}
 .btn-secondary {
     background-color: #6c757d;
     color: white;
+    border-color: #6c757d;
 }
-
 .btn-danger {
     background-color: #dc3545;
     color: white;
+    border-color: #dc3545;
 }
 
 .editor-group {
@@ -194,7 +256,7 @@ body, html {
 }
 
 .editor-group input {
-    width: calc(100% - 20px);
+    width: calc(100% - 22px);
     padding: 8px 10px;
     margin-bottom: 10px;
     border: 1px solid #ced4da;
@@ -204,15 +266,19 @@ body, html {
 .editor-group .paket-group {
     padding-left: 20px;
     border-left: 3px solid #007bff;
+    margin-top: 15px;
 }
 
 .editor-group .soal-item {
-    padding-left: 40px;
-    display: flex;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 10px;
     align-items: center;
 }
 
 .editor-group .soal-item input {
-    width: calc(50% - 40px);
-    margin-right: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0;
 }
