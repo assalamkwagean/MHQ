@@ -38,29 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
         fitPageBtn.classList.toggle('active', zoomMode === 'page');
     };
 
-    const renderPage = (num) => {
+    const renderPage = (num, posisi = 'atas') => {
         pdfDoc.getPage(num).then(page => {
             const viewerWidth = pdfViewerContainer.clientWidth;
             const viewerHeight = pdfViewerContainer.clientHeight;
 
-            let viewport = page.getViewport({ scale: 1 }); // Start with default scale to get dimensions
+            let viewport = page.getViewport({ scale: 1 });
             let scale;
 
             if (zoomMode === 'width') {
                 scale = viewerWidth / viewport.width;
-            } else { // 'page'
+            } else {
                 const scaleX = viewerWidth / viewport.width;
                 const scaleY = viewerHeight / viewport.height;
                 scale = Math.min(scaleX, scaleY);
             }
 
             viewport = page.getViewport({ scale: scale });
-            currentViewport = viewport; // Store viewport for highlighter calculations
+            currentViewport = viewport;
 
             if (!canvas) {
                 canvas = document.createElement('canvas');
                 ctx = canvas.getContext('2d');
-                pdfViewerContainer.innerHTML = ''; // Clear previous content
+                pdfViewerContainer.innerHTML = '';
                 pdfViewerContainer.appendChild(canvas);
             }
             canvas.height = viewport.height;
@@ -70,17 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
             page.render(renderContext).promise.then(() => {
                 currentPage = num;
                 updateNavButtons();
-                pdfViewerContainer.scrollTop = 0; // Scroll to top of new page
+
+                // Scroll based on position
+                if (posisi === 'tengah') {
+                    pdfViewerContainer.scrollTop = (pdfViewerContainer.scrollHeight - pdfViewerContainer.clientHeight) / 2;
+                } else if (posisi === 'bawah') {
+                    pdfViewerContainer.scrollTop = pdfViewerContainer.scrollHeight;
+                } else {
+                    pdfViewerContainer.scrollTop = 0;
+                }
                 
-                // Update canvas offset after rendering
                 setTimeout(updateCanvasOffset, 10);
             });
         });
     };
 
-    const jumpToPage = (pageNum) => {
+    const jumpToPage = (pageNum, posisi) => {
         if (pdfDoc && pageNum >= 1 && pageNum <= pdfDoc.numPages) {
-            renderPage(pageNum);
+            renderPage(pageNum, posisi);
         }
     };
 
@@ -212,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     soalDiv.dataset.id = `soal-${katIndex}-${pakIndex}-${soalIndex}`;
 
                     soalDiv.addEventListener('click', () => {
-                        jumpToPage(soal.halaman);
+                        jumpToPage(soal.halaman, soal.posisi);
                         if (soal.deskripsi) soalDiv.textContent = soal.deskripsi;
                         if (activeSoalElement) activeSoalElement.classList.remove('soal-active');
                         soalDiv.classList.add('soal-active');
