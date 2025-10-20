@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="settings-container">
-        <h1>Pengaturan Soal</h1>
+        <div class="settings-header">
+            <h1>Pengaturan Soal</h1>
+            <button id="theme-toggle" title="Ganti Tema">🌙</button>
+        </div>
         <p>Ubah, tambah, atau hapus kategori, paket, dan soal di bawah ini. Klik "Simpan & Unduh" untuk mendapatkan file <code>soal.json</code> yang baru.</p>
 
         <div id="editor-container">
@@ -21,6 +24,7 @@
         <a href="index.html" class="btn btn-secondary">Kembali ke Aplikasi Utama</a>
     </div>
 
+    <script src="theme.js"></script>
     <script src="settings.js"></script>
 </body>
 </html>

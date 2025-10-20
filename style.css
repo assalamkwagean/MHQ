@@ -1,12 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f2f5;
+    --bg-tertiary: #f8f9fa;
+    --text-primary: #333;
+    --text-secondary: #6c757d;
+    --text-tertiary: #adb5bd;
+    --border-color: #e9ecef;
+    --shadow-color: rgba(0,0,0,0.07);
+    --accent-color: #007bff;
+    --accent-color-hover: #0056b3;
+    --danger-color: #dc3545;
+    --soal-hover-bg: #e6f2ff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-border: #ddd;
+    --nav-text: #333;
+    --nav-disabled-bg: rgba(233, 236, 239, 0.5);
+}
+
+body.dark-mode {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #121212;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --text-tertiary: #757575;
+    --border-color: #3a3a3a;
+    --shadow-color: rgba(255,255,255,0.07);
+    --accent-color: #3a96ff;
+    --accent-color-hover: #007bff;
+    --soal-hover-bg: #3a3d40;
+    --nav-bg: rgba(42, 42, 42, 0.8);
+    --nav-border: #4a4a4a;
+    --nav-text: #e0e0e0;
+    --nav-disabled-bg: rgba(60, 60, 60, 0.5);
+}
+
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -18,10 +57,10 @@ body, html {
 .sidebar {
     width: 30%;
     min-width: 350px;
-    background-color: #ffffff;
+    background-color: var(--bg-primary);
     padding: 25px;
     overflow-y: auto;
-    box-shadow: 0 0 15px rgba(0,0,0,0.07);
+    box-shadow: 0 0 15px var(--shadow-color);
     display: flex;
     flex-direction: column;
 }
@@ -31,7 +70,7 @@ body, html {
     align-items: center;
     gap: 15px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -44,12 +83,13 @@ body, html {
     font-weight: 600;
     line-height: 1.4;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .app-header h2 span {
     font-size: 0.8em;
     font-weight: 400;
-    color: #6c757d;
+    color: var(--text-secondary);
 }
 
 .menu-header {
@@ -63,21 +103,36 @@ body, html {
 .menu-header h3 {
     margin: 0;
     font-size: 1em;
-    color: #adb5bd;
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.menu-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4em;
+    color: var(--text-tertiary);
+    padding: 0;
 }
 
 .settings-btn {
     font-size: 1.5em;
     text-decoration: none;
-    color: #adb5bd;
+    color: var(--text-tertiary);
     transition: transform 0.3s, color 0.3s;
 }
 
 .settings-btn:hover {
     transform: rotate(45deg);
-    color: #007bff;
+    color: var(--accent-color);
 }
 
 /* --- Accordion Menu --- */
@@ -88,17 +143,18 @@ body, html {
 .kategori-title, .paket-title {
     cursor: pointer;
     padding: 12px 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-top: 10px;
     transition: background-color 0.3s, border-color 0.3s;
     user-select: none;
     font-weight: 500;
+    color: var(--text-primary);
 }
 
 .kategori-title:hover, .paket-title:hover {
-    background-color: #e9ecef;
+    background-color: var(--border-color);
 }
 
 .paket-container, .soal-container {
@@ -110,7 +166,7 @@ body, html {
 
 .soal {
     padding: 10px 15px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-size: 0.95em;
@@ -121,17 +177,17 @@ body, html {
 }
 
 .soal:hover {
-    background-color: #e6f2ff;
+    background-color: var(--soal-hover-bg);
 }
 
 .soal-active {
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
     font-weight: 500;
     border-radius: 5px;
 }
 .soal-active:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-color-hover);
 }
 
 
@@ -140,7 +196,7 @@ body, html {
     width: 70%;
     height: 100vh;
     overflow: hidden;
-    background-color: #e9ecef;
+    background-color: var(--bg-secondary);
     position: relative;
     padding: 15px;
     box-sizing: border-box;
@@ -149,25 +205,25 @@ body, html {
 #pdf-viewer {
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px var(--shadow-color);
     border-radius: 8px;
-    overflow: hidden; /* pastikan canvas tidak keluar */
+    overflow: hidden;
 }
 #pdf-viewer canvas {
-    display: block; /* hapus spasi aneh di bawah canvas */
-    margin: auto; /* pusatkan canvas */
+    display: block;
+    margin: auto;
 }
 
 #pdf-highlighter {
     position: absolute;
     top: 0;
-    left: 15px; /* Sesuaikan dengan padding .content */
-    right: 15px; /* Sesuaikan dengan padding .content */
-    height: 25px; /* Atur tinggi highlighter */
-    background-color: rgba(255, 255, 0, 0.3); /* Kuning semi-transparan */
+    left: 15px;
+    right: 15px;
+    height: 25px;
+    background-color: rgba(255, 255, 0, 0.3);
     border: 1px solid rgba(255, 204, 0, 0.5);
-    pointer-events: none; /* Biarkan klik "tembus" ke PDF */
-    visibility: hidden; /* Sembunyikan secara default */
+    pointer-events: none;
+    visibility: hidden;
     z-index: 10;
     border-radius: 4px;
 }
@@ -188,24 +244,24 @@ body, html {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 1px solid #ddd;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
+    border: 1px solid var(--nav-border);
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
     font-size: 1.5em;
     cursor: pointer;
     transition: all 0.3s;
     opacity: 0.7;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 .pdf-navigation button:hover {
-    background-color: white;
+    background-color: var(--bg-primary);
     opacity: 1;
     transform: scale(1.1);
 }
 
 .pdf-navigation button:disabled {
-    background-color: rgba(233, 236, 239, 0.5);
+    background-color: var(--nav-disabled-bg);
     cursor: not-allowed;
     opacity: 0.5;
 }
@@ -216,13 +272,19 @@ body, html {
     max-width: 800px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .settings-container h1 {
-    color: #343a40;
+    color: var(--text-primary);
 }
 
 .btn {
@@ -234,52 +296,54 @@ body, html {
     margin: 5px;
     text-decoration: none;
     display: inline-block;
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #dee2e6;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
     transition: background-color 0.3s;
 }
 .btn:hover {
-    background-color: #e9ecef;
+    background-color: var(--border-color);
 }
 .btn-primary {
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
-    border-color: #007bff;
+    border-color: var(--accent-color);
 }
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-color-hover);
 }
 .btn-secondary {
-    background-color: #6c757d;
+    background-color: var(--text-secondary);
     color: white;
-    border-color: #6c757d;
+    border-color: var(--text-secondary);
 }
 .btn-danger {
-    background-color: #dc3545;
+    background-color: var(--danger-color);
     color: white;
-    border-color: #dc3545;
+    border-color: var(--danger-color);
 }
 
 .editor-group {
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-tertiary);
 }
 
 .editor-group input {
     width: calc(100% - 22px);
     padding: 8px 10px;
     margin-bottom: 10px;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .editor-group .paket-group {
     padding-left: 20px;
-    border-left: 3px solid #007bff;
+    border-left: 3px solid var(--accent-color);
     margin-top: 15px;
 }
 
