@@ -9,22 +9,26 @@
             {
               "nama": "Soal 1",
               "halaman": 42,
-              "deskripsi": "Al Baqoroh 255 - 257"
+              "deskripsi": "Al Baqoroh 255 - 257",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 24,
-              "deskripsi": "Al Baqoroh 158 - 163"
+              "deskripsi": "Al Baqoroh 158 - 163",
+              "posisi": "tengah"
             },
             {
               "nama": "Soal 3",
               "halaman": 2,
-              "deskripsi": "Al Fatihah 1 - Al Baqoroh 5"
+              "deskripsi": "Al Fatihah 1 - Al Baqoroh 5",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 4",
               "halaman": 83,
-              "deskripsi": "An Nisa 33 - 35"
+              "deskripsi": "An Nisa 33 - 35",
+              "posisi": "bawah"
             }
           ]
         },
@@ -34,22 +38,26 @@
             {
               "nama": "Soal 1",
               "halaman": 25,
-              "deskripsi": "Al Baqoroh 166 - 170"
+              "deskripsi": "Al Baqoroh 166 - 170",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 50,
-              "deskripsi": "Ali Imron 7 - 12"
+              "deskripsi": "Ali Imron 7 - 12",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 3",
               "halaman": 10,
-              "deskripsi": "Al Baqoroh 67 - 71"
+              "deskripsi": "Al Baqoroh 67 - 71",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 4",
               "halaman": 81,
-              "deskripsi": "An Nisa 23 - 24"
+              "deskripsi": "An Nisa 23 - 24",
+              "posisi": "tengah"
             }
           ]
         },
@@ -59,22 +67,26 @@
             {
               "nama": "Soal 1",
               "halaman": 43,
-              "deskripsi": "Al Baqoroh 258 - 259"
+              "deskripsi": "Al Baqoroh 258 - 259",
+              "posisi": "tengah"
             },
             {
               "nama": "Soal 2",
               "halaman": 22,
-              "deskripsi": "Al Baqoroh 142 - 144"
+              "deskripsi": "Al Baqoroh 142 - 144",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 3",
               "halaman": 3,
-              "deskripsi": "Al Baqoroh 14 - 19"
+              "deskripsi": "Al Baqoroh 14 - 19",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 4",
               "halaman": 91,
-              "deskripsi": "An Nisa 80 - 83"
+              "deskripsi": "An Nisa 80 - 83",
+              "posisi": "atas"
             }
           ]
         },
@@ -84,22 +96,26 @@
             {
               "nama": "Soal 1",
               "halaman": 21,
-              "deskripsi": "Al Baqoroh 139 - 142"
+              "deskripsi": "Al Baqoroh 139 - 142",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 63,
-              "deskripsi": "Ali Imron 102 - 105"
+              "deskripsi": "Ali Imron 102 - 105",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 3",
               "halaman": 57,
-              "deskripsi": "Ali Imron 53 - 56"
+              "deskripsi": "Ali Imron 53 - 56",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 4",
               "halaman": 85,
-              "deskripsi": "An Nisa 43 - 45"
+              "deskripsi": "An Nisa 43 - 45",
+              "posisi": "bawah"
             }
           ]
         }
@@ -114,17 +130,20 @@
             {
               "nama": "Soal 1",
               "halaman": 582,
-              "deskripsi": "An Naba 1 - 16"
+              "deskripsi": "An Naba 1 - 16",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 2",
               "halaman": 588,
-              "deskripsi": "Al Muthoffifin 7-22"
+              "deskripsi": "Al Muthoffifin 7-22",
+              "posisi": "atas"
             },
             {
               "nama": "Soal 3",
               "halaman": 593,
-              "deskripsi": "Al Fajr 19-30"
+              "deskripsi": "Al Fajr 19-30",
+              "posisi": "bawah"
             }
           ]
         },
@@ -134,17 +153,20 @@
             {
               "nama": "Soal 1",
               "halaman": 595,
-              "deskripsi": "Al Lail 8-21"
+              "deskripsi": "Al Lail 8-21",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 588,
-              "deskripsi": "Al Muthoffifin 23-31"
+              "deskripsi": "Al Muthoffifin 23-31",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 3",
               "halaman": 596,
-              "deskripsi": "Ad Dhuha - Al Insyirah"
+              "deskripsi": "Ad Dhuha - Al Insyirah",
+              "posisi": "tengah"
             }
           ]
         },
@@ -154,17 +176,20 @@
             {
               "nama": "Soal 1",
               "halaman": 592,
-              "deskripsi": "Al Ghosiyah 17- Al Fajr 1"
+              "deskripsi": "Al Ghosiyah 17- Al Fajr 1",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 591,
-              "deskripsi": "Ath Thoriq 8- Al A'la 7"
+              "deskripsi": "Ath Thoriq 8- Al A'la 7",
+              "posisi": "tengah"
             },
             {
               "nama": "Soal 3",
               "halaman": 594,
-              "deskripsi": "Al Balad 9 - Asy Syams 5"
+              "deskripsi": "Al Balad 9 - Asy Syams 5",
+              "posisi": "bawah"
             }
           ]
         },
@@ -174,17 +199,20 @@
             {
               "nama": "Soal 1",
               "halaman": 587,
-              "deskripsi": "Al Infithar 15- Al Muthoffifin 6"
+              "deskripsi": "Al Infithar 15- Al Muthoffifin 6",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 2",
               "halaman": 585,
-              "deskripsi": "Abasa 30 - At Takwir 1"
+              "deskripsi": "Abasa 30 - At Takwir 1",
+              "posisi": "bawah"
             },
             {
               "nama": "Soal 3",
               "halaman": 590,
-              "deskripsi": "Al Buruj 10-22"
+              "deskripsi": "Al Buruj 10-22",
+              "posisi": "bawah"
             }
           ]
         }
