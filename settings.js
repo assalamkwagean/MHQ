@@ -62,12 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const createSoalItem = (soal, katIndex, pakIndex, soalIndex) => {
         const div = document.createElement('div');
         div.className = 'soal-item';
-        // Tambahkan input untuk deskripsi, pastikan tidak error jika deskripsi tidak ada
         const deskripsi = soal.deskripsi || '';
+        const posisi = soal.posisi || 'atas'; // Default ke 'atas'
         div.innerHTML = `
             <input type="text" value="${soal.nama}" class="soal-name" placeholder="Nama Soal" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
             <input type="number" value="${soal.halaman}" class="soal-halaman" placeholder="Halaman" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
             <input type="text" value="${deskripsi}" class="soal-deskripsi" placeholder="Deskripsi (e.g., Al-Baqarah: 155)" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
+            <select class="soal-posisi" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">
+                <option value="atas" ${posisi === 'atas' ? 'selected' : ''}>Atas</option>
+                <option value="tengah" ${posisi === 'tengah' ? 'selected' : ''}>Tengah</option>
+                <option value="bawah" ${posisi === 'bawah' ? 'selected' : ''}>Bawah</option>
+            </select>
             <button class="btn btn-danger" data-kat-index="${katIndex}" data-pak-index="${pakIndex}" data-soal-index="${soalIndex}">Hapus</button>
         `;
         return div;
@@ -85,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const addSoalHandler = (e) => {
         const { katIndex, pakIndex } = e.target.dataset;
-        // Tambahkan field deskripsi saat membuat soal baru
-        soalData.kategori[katIndex].paket[pakIndex].soal.push({ nama: "Soal Baru", halaman: 1, deskripsi: "" });
+        // Tambahkan field deskripsi dan posisi saat membuat soal baru
+        soalData.kategori[katIndex].paket[pakIndex].soal.push({ nama: "Soal Baru", halaman: 1, deskripsi: "", posisi: "atas" });
         renderEditor();
     };
     const deleteHandler = (e) => {
@@ -117,9 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         const soalIndex = soalDiv.querySelector('.soal-name').dataset.soalIndex;
                         const soalName = soalDiv.querySelector(`.soal-name[data-soal-index="${soalIndex}"]`).value;
                         const soalHalaman = parseInt(soalDiv.querySelector(`.soal-halaman[data-soal-index="${soalIndex}"]`).value, 10);
-                        // Ambil juga nilai dari deskripsi
                         const soalDeskripsi = soalDiv.querySelector(`.soal-deskripsi[data-soal-index="${soalIndex}"]`).value;
-                        newPaket.soal.push({ nama: soalName, halaman: soalHalaman, deskripsi: soalDeskripsi });
+                        const soalPosisi = soalDiv.querySelector(`.soal-posisi[data-soal-index="${soalIndex}"]`).value;
+                        newPaket.soal.push({ nama: soalName, halaman: soalHalaman, deskripsi: soalDeskripsi, posisi: soalPosisi });
                     });
                     newKategori.paket.push(newPaket);
                 }
