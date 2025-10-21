@@ -1,0 +1,32 @@
+[
+  {
+    "halaman": 2,
+    "deskripsi": "Al-Fatihah 1 - Al-Baqarah 5",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 24,
+    "deskripsi": "Al-Baqarah 158 - 163",
+    "posisi": "tengah",
+    "juz": 2
+  },
+  {
+    "halaman": 42,
+    "deskripsi": "Al-Baqarah 253 - 256",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 582,
+    "deskripsi": "An-Naba' 1 - 30",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 583,
+    "deskripsi": "An-Nazi'at 1 - 26",
+    "posisi": "atas",
+    "juz": 30
+  }
+]
