@@ -468,133 +468,179 @@ body, html {
     border-color: var(--accent-color);
 }
 
-/* --- Book Loader CSS --- */
+/* --- New Loader CSS --- */
 #loader-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-.book {
-    --color: var(--text-primary);
-    position: relative;
-    width: 40px;
-    height: 30px;
-    transform-style: preserve-3d;
-    transform: perspective(2000px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color);
+.loader {
+  --background: linear-gradient(135deg, var(--accent-color), var(--accent-color-hover));
+  --shadow: var(--shadow-color);
+  --text: var(--text-secondary);
+  --page: #f0f2f580;
+  --page-fold: #e9ecef80;
+  --duration: 3s;
+  width: 200px;
+  height: 140px;
+  position: relative;
+}
+body.dark-mode .loader {
+  --page: #3a3a3a80;
+  --page-fold: #4a4a4a80;
 }
 
-.book__pg-shadow {
-    position: absolute;
-    left: 100%;
-    top: -3%;
-    width: 100%;
-    height: 106%;
-    border-radius: 3px;
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0.5), rgba(0,0,0,0.2), rgba(0,0,0,0));
-    transform-origin: left;
-    transform: rotateY(0deg);
-    animation: book-turn 1.8s infinite;
+.loader:before, .loader:after {
+  --r: -6deg;
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  width: 120px;
+  top: 80%;
+  box-shadow: 0 16px 12px var(--shadow);
+  transform: rotate(var(--r));
 }
 
-.book__pg {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
-    transform-origin: left;
-    background: linear-gradient(to right, var(--bg-tertiary) 95%, var(--border-color) 100%);
+.loader:before { left: 4px; }
+.loader:after { --r: 6deg; right: 4px; }
+
+.loader div {
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  position: relative;
+  z-index: 1;
+  perspective: 600px;
+  box-shadow: 0 4px 6px var(--shadow);
+  background-image: var(--background);
 }
 
-.book__pg--2 {
-    animation: book-turn 1.8s 0.25s infinite;
+.loader div ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
 }
 
-.book__pg--3 {
-    animation: book-turn 1.8s 0.5s infinite;
+.loader div ul li {
+  --r: 180deg;
+  --o: 0;
+  --c: var(--page);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transform-origin: 100% 50%;
+  color: var(--c);
+  opacity: var(--o);
+  transform: rotateY(var(--r));
+  animation: page-turn var(--duration) ease infinite;
 }
 
-.book__pg--4 {
-    animation: book-turn 1.8s 0.75s infinite;
+.loader div ul li:nth-child(2) { animation-name: page-2; }
+.loader div ul li:nth-child(3) { animation-name: page-3; }
+.loader div ul li:nth-child(4) { animation-name: page-4; }
+.loader div ul li:nth-child(5) { animation-name: page-5; }
+
+.loader div ul li:nth-child(2),
+.loader div ul li:nth-child(3),
+.loader div ul li:nth-child(4),
+.loader div ul li:nth-child(5) {
+  --c: var(--page-fold);
 }
 
-.book__pg--5 {
-    animation: book-turn 1.8s 1s infinite;
+.loader div ul li svg {
+  width: 90px;
+  height: 120px;
+  display: block;
 }
 
-@keyframes book-turn {
-    0% {
-        transform: rotateY(0deg);
-    }
-    20%, 100% {
-        transform: rotateY(-180deg);
-    }
+.loader div ul li:first-child { --r: 0deg; --o: 1; }
+.loader div ul li:last-child { --o: 1; }
+
+.loader span {
+  display: block;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text);
 }
 
-/* --- New Menu Toggle Switch --- */
-.menu-soal-toggle {
-    display: flex;
-    align-items: center;
+@keyframes page-turn { 0% { transform: rotateY(180deg); opacity: 0; } 20% { opacity: 1; } 35%, 100% { opacity: 0; } 50%, 100% { transform: rotateY(0deg); } }
+@keyframes page-2 { 15% { transform: rotateY(180deg); opacity: 0; } 35% { opacity: 1; } 50%, 100% { opacity: 0; } 65%, 100% { transform: rotateY(0deg); } }
+@keyframes page-3 { 30% { transform: rotateY(180deg); opacity: 0; } 50% { opacity: 1; } 65%, 100% { opacity: 0; } 80%, 100% { transform: rotateY(0deg); } }
+@keyframes page-4 { 45% { transform: rotateY(180deg); opacity: 0; } 65% { opacity: 1; } 80%, 100% { opacity: 0; } 95%, 100% { transform: rotateY(0deg); } }
+@keyframes page-5 { 60% { transform: rotateY(180deg); opacity: 0; } 80% { opacity: 1; } 95%, 100% { opacity: 0; } 100% { transform: rotateY(0deg); } }
+
+/* --- New Menu Toggle Switch V2 --- */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 100px;
+ height: 34px;
 }
 
-#menu-type-toggle {
-    display: none;
+.switch input {
+ display: none;
 }
 
-.menu-type-switch {
-    position: relative;
-    width: 110px;
-    height: 40px;
-    background-color: var(--bg-tertiary);
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 10px;
-    box-shadow: inset 0 1px 3px var(--shadow-color);
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: var(--bg-tertiary);
+ border: 1px solid var(--border-color);
+ transition: .4s;
+ border-radius: 34px;
 }
 
-.menu-type-switch__circle {
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 50px;
-    height: 32px;
-    background-color: var(--accent-color);
-    border-radius: 16px;
-    transition: left 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    box-shadow: 0 1px 3px var(--shadow-color);
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 3px;
+ background-color: white;
+ box-shadow: 0 0 3px var(--shadow-color);
+ transition: .4s;
+ border-radius: 50%;
 }
 
-.menu-type-switch__circle-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+input:checked + .slider {
+ background-color: var(--accent-color);
 }
 
-#menu-type-toggle:checked + .menu-type-switch .menu-type-switch__circle {
-    left: 56px;
+input:focus + .slider {
+ box-shadow: 0 0 1px var(--accent-color);
 }
 
-.menu-type-switch__left,
-.menu-type-switch__right {
-    z-index: 1;
-    font-size: 0.85em;
-    font-weight: 500;
-    color: var(--text-secondary);
-    transition: color 0.3s;
+input:checked + .slider:before {
+ transform: translateX(65px);
 }
 
-#menu-type-toggle:not(:checked) + .menu-type-switch .menu-type-switch__left,
-#menu-type-toggle:checked + .menu-type-switch .menu-type-switch__right {
-    color: white;
+.slider:after {
+ content: 'Biasa';
+ color: var(--text-primary);
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 60%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after {
+ content: 'Acak';
+ left: 30%;
 }
 
 
