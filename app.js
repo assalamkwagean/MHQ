@@ -30,6 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
     setHighlighterState(localStorage.getItem('highlighterActive') === 'true');
     highlighterToggle.addEventListener('change', (e) => setHighlighterState(e.target.checked));
 
+    // --- Menu Type Toggle Logic ---
+    const menuTypeToggle = document.getElementById('menu-type-toggle');
+    const menuSoalContainer = document.getElementById('menu-soal');
+    const menuAcakContainer = document.querySelector('.menu-acak-container');
+
+    menuTypeToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            // Show Acak Menu
+            menuSoalContainer.style.display = 'none';
+            menuAcakContainer.style.display = 'block';
+        } else {
+            // Show Biasa Menu
+            menuSoalContainer.style.display = 'block';
+            menuAcakContainer.style.display = 'none';
+        }
+    });
+
     // --- PDF Rendering Logic ---
     const updateNavButtons = () => {
         prevPageBtn.disabled = currentPage <= 1;
@@ -253,5 +270,106 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(error => {
         document.getElementById('menu-soal').innerHTML = `<p style="color: red;">Error: Gagal memuat soal.json.</p>`;
         console.error('Error fetching soal.json:', error);
+    });
+
+    // --- SOAL ACAK LOGIC ---
+    const acakButton = document.getElementById('acak-button');
+    const jumlahSoalInput = document.getElementById('jumlah-soal');
+    const loaderContainer = document.getElementById('loader-container');
+    const hasilAcakContainer = document.getElementById('hasil-acak-container');
+    const juzButtonsContainer = document.getElementById('juz-buttons');
+
+    let bankSoal = [];
+    let selectedJuz = null;
+
+    // 1. Load Bank Soal
+    fetch('bank-soal.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            bankSoal = data;
+        })
+        .catch(error => {
+            hasilAcakContainer.innerHTML = `<p style="color: red;">Error: Gagal memuat bank-soal.json.</p>`;
+            console.error('Error fetching bank-soal.json:', error);
+            acakButton.disabled = true;
+        });
+
+    // 2. Juz Selection Logic
+    juzButtonsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('juz-btn')) {
+            const juz = e.target.dataset.juz;
+            if (e.target.classList.contains('active')) {
+                // Deselect
+                e.target.classList.remove('active');
+                selectedJuz = null;
+            } else {
+                // Deselect all others
+                juzButtonsContainer.querySelectorAll('.juz-btn').forEach(btn => btn.classList.remove('active'));
+                // Select this one
+                e.target.classList.add('active');
+                selectedJuz = parseInt(juz, 10);
+            }
+        }
+    });
+
+    // 3. Acak Button Logic
+    acakButton.addEventListener('click', () => {
+        // Clear previous results
+        hasilAcakContainer.innerHTML = '';
+        // Show loader
+        loaderContainer.style.display = 'flex';
+
+        setTimeout(() => {
+            let filteredSoal = bankSoal;
+
+            // Filter by Juz if selected
+            if (selectedJuz) {
+                filteredSoal = bankSoal.filter(soal => soal.juz === selectedJuz);
+            }
+
+            if (filteredSoal.length === 0) {
+                 hasilAcakContainer.innerHTML = `<p style="color: var(--text-secondary);">Tidak ada soal ditemukan untuk kriteria yang dipilih.</p>`;
+                 loaderContainer.style.display = 'none';
+                 return;
+            }
+
+            // Shuffle the array
+            const shuffledSoal = [...filteredSoal].sort(() => 0.5 - Math.random());
+
+            // Get the requested number of questions
+            const jumlahSoal = parseInt(jumlahSoalInput.value, 10);
+            const selectedSoal = shuffledSoal.slice(0, jumlahSoal);
+
+            // Hide loader
+            loaderContainer.style.display = 'none';
+
+            // 4. Display results
+            selectedSoal.forEach((soal, index) => {
+                const soalDiv = document.createElement('div');
+                soalDiv.classList.add('soal');
+                soalDiv.textContent = `Soal ${index + 1}`;
+
+                soalDiv.addEventListener('click', () => {
+                    jumpToPage(soal.halaman, soal.posisi);
+                    if (soal.deskripsi) {
+                        soalDiv.textContent = soal.deskripsi;
+                    }
+                    // Handle active state for random questions
+                    if (activeSoalElement) {
+                        activeSoalElement.classList.remove('soal-active');
+                    }
+                    document.querySelectorAll('#hasil-acak-container .soal').forEach(el => el.classList.remove('soal-active'));
+                    soalDiv.classList.add('soal-active');
+                    activeSoalElement = soalDiv;
+                });
+                hasilAcakContainer.appendChild(soalDiv);
+            });
+
+        }, 1500); // Simulate loading time
     });
 });

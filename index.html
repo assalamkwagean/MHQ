@@ -13,19 +13,85 @@
                 <img src="logo_pondok.png" alt="Logo" class="logo">
                 <h2>Musabaqoh Hidzil Qur'an<br><span>Pondok As-Salam Fathul Ulum Kwagean</span></h2>
             </div>
-            <div class="menu-header">
-                <h3>Menu Soal</h3>
-                <div class="menu-controls">
-                    <div class="toggle-switch">
-                        <label for="highlighter-toggle">Highlighter:</label>
-                        <input type="checkbox" id="highlighter-toggle" class="toggle-input">
-                        <label for="highlighter-toggle" class="toggle-label"></label>
-                    </div>
-                    <button id="theme-toggle" title="Ganti Tema">🌙</button>
-                    <a href="settings.html" class="settings-btn" title="Pengaturan Soal">⚙️</a>
+<div class="sidebar-controls">
+    <div class="highlighter-toggle-container">
+        <label for="highlighter-toggle">Highlighter:</label>
+        <label class="switch-highlighter">
+            <input type="checkbox" id="highlighter-toggle">
+            <span class="slider-highlighter"></span>
+        </label>
                 </div>
+    <div class="menu-soal-toggle">
+        <input type="checkbox" id="menu-type-toggle">
+        <label for="menu-type-toggle" class="menu-type-switch">
+            <span class="menu-type-switch__circle">
+                <span class="menu-type-switch__circle-inner"></span>
+            </span>
+            <span class="menu-type-switch__left">Biasa</span>
+            <span class="menu-type-switch__right">Acak</span>
+        </label>
+    </div>
+    <button id="theme-toggle" title="Ganti Tema">🌙</button>
+    <a href="settings.html" class="settings-btn" title="Pengaturan Soal">⚙️</a>
             </div>
             <div id="menu-soal"></div>
+
+<div class="menu-acak-container" style="display: none;">
+                <div class="acak-controls">
+                    <label for="jumlah-soal">Jumlah Soal:</label>
+                    <input type="number" id="jumlah-soal" min="1" max="7" value="3">
+                    <button id="acak-button">Acak Soal</button>
+                </div>
+
+                <div id="loader-container" style="display: none;">
+                    <div class="book">
+                        <div class="book__pg-shadow"></div>
+                        <div class="book__pg"></div>
+                        <div class="book__pg book__pg--2"></div>
+                        <div class="book__pg book__pg--3"></div>
+                        <div class="book__pg book__pg--4"></div>
+                        <div class="book__pg book__pg--5"></div>
+                    </div>
+                </div>
+
+                <div id="hasil-acak-container"></div>
+
+                <div class="juz-selector-container">
+                    <label>Pilih Juz (klik lagi untuk batal):</label>
+                    <div id="juz-buttons">
+                        <button class="juz-btn" data-juz="1">1</button>
+                        <button class="juz-btn" data-juz="2">2</button>
+                        <button class="juz-btn" data-juz="3">3</button>
+                        <button class="juz-btn" data-juz="4">4</button>
+                        <button class="juz-btn" data-juz="5">5</button>
+                        <button class="juz-btn" data-juz="6">6</button>
+                        <button class="juz-btn" data-juz="7">7</button>
+                        <button class="juz-btn" data-juz="8">8</button>
+                        <button class="juz-btn" data-juz="9">9</button>
+                        <button class="juz-btn" data-juz="10">10</button>
+                        <button class="juz-btn" data-juz="11">11</button>
+                        <button class="juz-btn" data-juz="12">12</button>
+                        <button class="juz-btn" data-juz="13">13</button>
+                        <button class="juz-btn" data-juz="14">14</button>
+                        <button class="juz-btn" data-juz="15">15</button>
+                        <button class="juz-btn" data-juz="16">16</button>
+                        <button class="juz-btn" data-juz="17">17</button>
+                        <button class="juz-btn" data-juz="18">18</button>
+                        <button class="juz-btn" data-juz="19">19</button>
+                        <button class="juz-btn" data-juz="20">20</button>
+                        <button class="juz-btn" data-juz="21">21</button>
+                        <button class="juz-btn" data-juz="22">22</button>
+                        <button class="juz-btn" data-juz="23">23</button>
+                        <button class="juz-btn" data-juz="24">24</button>
+                        <button class="juz-btn" data-juz="25">25</button>
+                        <button class="juz-btn" data-juz="26">26</button>
+                        <button class="juz-btn" data-juz="27">27</button>
+                        <button class="juz-btn" data-juz="28">28</button>
+                        <button class="juz-btn" data-juz="29">29</button>
+                        <button class="juz-btn" data-juz="30">30</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content">
             <div id="pdf-viewer"></div>
