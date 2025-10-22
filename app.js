@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fitWidthBtn = document.getElementById('fit-width');
     const fitPageBtn = document.getElementById('fit-page');
     const highlighterToggle = document.getElementById('highlighter-toggle');
+    const fullscreenToggle = document.getElementById('fullscreen-toggle');
 
     // --- State Variables ---
     let pdfDoc = null;
@@ -113,6 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
     nextPageBtn.addEventListener('click', () => (currentPage < pdfDoc.numPages) && jumpToPage(currentPage + 1));
     fitWidthBtn.addEventListener('click', () => { zoomMode = 'width'; renderPage(currentPage); });
     fitPageBtn.addEventListener('click', () => { zoomMode = 'page'; renderPage(currentPage); });
+
+    fullscreenToggle.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    });
 
     pdfViewerContainer.addEventListener('mouseenter', () => isHighlighterActive && (pdfHighlighter.style.visibility = 'visible'));
     pdfViewerContainer.addEventListener('mouseleave', () => pdfHighlighter.style.visibility = 'hidden');
