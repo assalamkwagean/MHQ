@@ -9,6 +9,7 @@ Aplikasi web modern untuk menampilkan soal Musabaqoh Hifdzil Qur'an (MHQ) dalam 
 - **Default fit width** untuk keterbacaan yang optimal
 - Navigasi halaman dengan tombol atau keyboard (↑/↓)
 - Zoom modes: Fit to Page dan Fit to Width
+*Catatan : Download mushafnya di https://islamdownload.net/129945-download-mushaf-madinah-pdf.html dan **jangan lupa di rename menjadi mushaf.pdf***
 
 ### 🎯 **Dua Mode Menu Soal**
 - **Mode Normal**: Menu soal terstruktur (kategori → paket → soal) dimuat dari `soal.json`
