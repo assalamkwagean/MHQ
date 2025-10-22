@@ -164,7 +164,7 @@ Aplikasi dioptimalkan untuk berbagai ukuran layar:
 ## 📄 Struktur File
 
 ```
-MHQ-fitur-soal-acak/
+FOLDER APLIKASI/
 ├── index.html          # Halaman utama
 ├── settings.html       # Halaman pengaturan
 ├── style.css          # Styling utama
@@ -174,7 +174,7 @@ MHQ-fitur-soal-acak/
 ├── soal.json          # Database soal normal
 ├── bank-soal.json     # Database soal acak
 ├── mushaf.pdf         # File PDF mushaf
-├── logo_pondok.png    # Logo aplikasi
+├── logo.png           # Logo aplikasi
 └── README.md          # Dokumentasi
 ```
 
