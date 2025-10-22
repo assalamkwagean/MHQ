@@ -137,11 +137,28 @@ body, html {
     min-width: 40px;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover, #fullscreen-toggle:hover {
     background-color: var(--border-color);
     color: var(--accent-color);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#fullscreen-toggle {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
 }
 
 .settings-btn {
