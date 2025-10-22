@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ctx = null;
     let activeSoalElement = null;
     let isHighlighterActive = false;
-    let zoomMode = 'page'; // 'page' or 'width'
+    let zoomMode = 'width'; // 'page' or 'width'
     let currentViewport = null; // Store current viewport for highlighter calculations
     let canvasOffset = { x: 0, y: 0 }; // Store canvas offset for stable positioning
     let lastMouseEvent = null; // Track last mousemove event for scroll updates
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const juzButtonsContainer = document.getElementById('juz-buttons');
 
     let bankSoal = [];
-    let selectedJuz = null;
+    let selectedJuz = [];
 
     // 1. Load Bank Soal
     fetch('bank-soal.json')
@@ -299,20 +299,23 @@ document.addEventListener('DOMContentLoaded', () => {
             acakButton.disabled = true;
         });
 
-    // 2. Juz Selection Logic
+    // 2. Juz Selection Logic (Multi-select)
     juzButtonsContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('juz-btn')) {
-            const juz = e.target.dataset.juz;
+            const juz = parseInt(e.target.dataset.juz, 10);
+            e.target.classList.toggle('active');
+
             if (e.target.classList.contains('active')) {
-                // Deselect
-                e.target.classList.remove('active');
-                selectedJuz = null;
+                // Add to list if not already present
+                if (!selectedJuz.includes(juz)) {
+                    selectedJuz.push(juz);
+                }
             } else {
-                // Deselect all others
-                juzButtonsContainer.querySelectorAll('.juz-btn').forEach(btn => btn.classList.remove('active'));
-                // Select this one
-                e.target.classList.add('active');
-                selectedJuz = parseInt(juz, 10);
+                // Remove from list
+                const index = selectedJuz.indexOf(juz);
+                if (index > -1) {
+                    selectedJuz.splice(index, 1);
+                }
             }
         }
     });
@@ -325,11 +328,14 @@ document.addEventListener('DOMContentLoaded', () => {
         loaderContainer.style.display = 'flex';
 
         setTimeout(() => {
-            let filteredSoal = bankSoal;
+            let filteredSoal = [];
 
-            // Filter by Juz if selected
-            if (selectedJuz) {
-                filteredSoal = bankSoal.filter(soal => soal.juz === selectedJuz);
+            // Filter by Juz if any are selected
+            if (selectedJuz.length > 0) {
+                filteredSoal = bankSoal.filter(soal => selectedJuz.includes(soal.juz));
+            } else {
+                // If no juz is selected, use all questions
+                filteredSoal = bankSoal;
             }
 
             if (filteredSoal.length === 0) {

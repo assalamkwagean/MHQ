@@ -1,32 +1,2006 @@
 [
   {
-    "halaman": 2,
-    "deskripsi": "Al-Fatihah 1 - Al-Baqarah 5",
+    "halaman": 16,
+    "deskripsi": "Al-Baqarah: 102-103",
     "posisi": "atas",
     "juz": 1
   },
   {
-    "halaman": 24,
-    "deskripsi": "Al-Baqarah 158 - 163",
+    "halaman": 20,
+    "deskripsi": "Al-Baqarah: 127-132",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 4,
+    "deskripsi": "Al-Baqarah: 21-25",
     "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 6,
+    "deskripsi": "Al-Baqarah: 30-34",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 7,
+    "deskripsi": "Al-Baqarah: 48-53",
+    "posisi": "bawah",
+    "juz": 1
+  },
+  {
+    "halaman": 9,
+    "deskripsi": "Al-Baqarah: 60-61",
+    "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 3,
+    "deskripsi": "Al-Baqarah: 8-14",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 13,
+    "deskripsi": "Al-Baqarah: 85-86",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 11,
+    "deskripsi": "Al-Baqarah: 73-76",
+    "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 2,
+    "deskripsi": "Al-Fatihah: 5 - Al-Baqarah: 5",
+    "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 22,
+    "deskripsi": "Al-Baqarah: 142-144",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 23,
+    "deskripsi": "Al-Baqarah: 152-157",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 24,
+    "deskripsi": "Al-Baqarah: 163-165",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 27,
+    "deskripsi": "Al-Baqarah: 177-178",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 28,
+    "deskripsi": "Al-Baqarah: 183-185",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 28,
+    "deskripsi": "Al-Baqarah: 186-187",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 31,
+    "deskripsi": "Al-Baqarah: 197-199",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 34,
+    "deskripsi": "Al-Baqarah: 216-217",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 36,
+    "deskripsi": "Al-Baqarah: 229-230",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 39,
+    "deskripsi": "Al-Baqarah: 245-247",
+    "posisi": "bawah",
     "juz": 2
   },
   {
     "halaman": 42,
-    "deskripsi": "Al-Baqarah 253 - 256",
+    "deskripsi": "Al-Baqarah: 253-254",
     "posisi": "atas",
     "juz": 3
   },
   {
-    "halaman": 582,
-    "deskripsi": "An-Naba' 1 - 30",
+    "halaman": 42,
+    "deskripsi": "Al-Baqarah: 255-256",
+    "posisi": "bawah",
+    "juz": 3
+  },
+  {
+    "halaman": 44,
+    "deskripsi": "Al-Baqarah: 260-262",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 49,
+    "deskripsi": "Al-Baqarah: 284-286",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 52,
+    "deskripsi": "Ali 'Imran: 18-20",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 53,
+    "deskripsi": "Ali 'Imran: 26-29",
+    "posisi": "tengah",
+    "juz": 3
+  },
+  {
+    "halaman": 54,
+    "deskripsi": "Ali 'Imran: 31-36",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 55,
+    "deskripsi": "Ali 'Imran: 45-49",
+    "posisi": "bawah",
+    "juz": 3
+  },
+  {
+    "halaman": 58,
+    "deskripsi": "Ali 'Imran: 64-66",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 50,
+    "deskripsi": "Ali 'Imran: 8-12",
+    "posisi": "bawah",
+    "juz": 3
+  },
+  {
+    "halaman": 63,
+    "deskripsi": "Ali 'Imran: 102-105",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 64,
+    "deskripsi": "Ali 'Imran: 110-112",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 67,
+    "deskripsi": "Ali 'Imran: 133-136",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 71,
+    "deskripsi": "Ali 'Imran: 159-161",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 74,
+    "deskripsi": "Ali 'Imran: 185-187",
+    "posisi": "bawah",
+    "juz": 4
+  },
+  {
+    "halaman": 75,
+    "deskripsi": "Ali 'Imran: 191-194",
+    "posisi": "bawah",
+    "juz": 4
+  },
+  {
+    "halaman": 62,
+    "deskripsi": "Ali 'Imran: 92-96",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 77,
+    "deskripsi": "An-Nisa': 1-3",
+    "posisi": "atas",
+    "juz": 4
+  },
+  {
+    "halaman": 80,
+    "deskripsi": "An-Nisa': 19-21",
+    "posisi": "bawah",
+    "juz": 4
+  },
+  {
+    "halaman": 77,
+    "deskripsi": "An-Nisa': 3-6",
+    "posisi": "tengah",
+    "juz": 4
+  },
+  {
+    "halaman": 97,
+    "deskripsi": "An-Nisa': 114-117",
+    "posisi": "atas",
+    "juz": 5
+  },
+  {
+    "halaman": 100,
+    "deskripsi": "An-Nisa': 135-136",
+    "posisi": "atas",
+    "juz": 5
+  },
+  {
+    "halaman": 82,
+    "deskripsi": "An-Nisa': 24-25",
+    "posisi": "atas",
+    "juz": 5
+  },
+  {
+    "halaman": 83,
+    "deskripsi": "An-Nisa': 29-32",
+    "posisi": "atas",
+    "juz": 5
+  },
+  {
+    "halaman": 84,
+    "deskripsi": "An-Nisa': 36-38",
+    "posisi": "bawah",
+    "juz": 5
+  },
+  {
+    "halaman": 86,
+    "deskripsi": "An-Nisa': 48-52",
+    "posisi": "bawah",
+    "juz": 5
+  },
+  {
+    "halaman": 87,
+    "deskripsi": "An-Nisa': 58-60",
+    "posisi": "bawah",
+    "juz": 5
+  },
+  {
+    "halaman": 89,
+    "deskripsi": "An-Nisa': 69-73",
+    "posisi": "tengah",
+    "juz": 5
+  },
+  {
+    "halaman": 91,
+    "deskripsi": "An-Nisa': 86-89",
+    "posisi": "bawah",
+    "juz": 5
+  },
+  {
+    "halaman": 94,
+    "deskripsi": "An-Nisa': 95-98",
+    "posisi": "atas",
+    "juz": 5
+  },
+  {
+    "halaman": 107,
+    "deskripsi": "Al-Ma'idah: 3-4",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 113,
+    "deskripsi": "Al-Ma'idah: 32-33",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 115,
+    "deskripsi": "Al-Ma'idah: 44-45",
+    "posisi": "tengah",
+    "juz": 6
+  },
+  {
+    "halaman": 116,
+    "deskripsi": "Al-Ma'idah: 48-49",
+    "posisi": "tengah",
+    "juz": 6
+  },
+  {
+    "halaman": 117,
+    "deskripsi": "Al-Ma'idah: 54-57",
+    "posisi": "tengah",
+    "juz": 6
+  },
+  {
+    "halaman": 108,
+    "deskripsi": "Al-Ma'idah: 6-7",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 121,
+    "deskripsi": "Al-Ma'idah: 77-80",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 108,
+    "deskripsi": "Al-Ma'idah: 8-11",
+    "posisi": "bawah",
+    "juz": 6
+  },
+  {
+    "halaman": 102,
+    "deskripsi": "An-Nisa': 148-152",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 105,
+    "deskripsi": "An-Nisa': 171-172",
+    "posisi": "atas",
+    "juz": 6
+  },
+  {
+    "halaman": 129,
+    "deskripsi": "Al-An'am: 12-14",
+    "posisi": "tengah",
+    "juz": 7
+  },
+  {
+    "halaman": 131,
+    "deskripsi": "Al-An'am: 32-35",
+    "posisi": "tengah",
+    "juz": 7
+  },
+  {
+    "halaman": 134,
+    "deskripsi": "Al-An'am: 54-57",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 134,
+    "deskripsi": "Al-An'am: 59-62",
+    "posisi": "bawah",
+    "juz": 7
+  },
+  {
+    "halaman": 137,
+    "deskripsi": "Al-An'am: 79-82",
+    "posisi": "bawah",
+    "juz": 7
+  },
+  {
+    "halaman": 140,
+    "deskripsi": "Al-An'am: 95-98",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 125,
+    "deskripsi": "Al-Ma'idah: 105-106",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 126,
+    "deskripsi": "Al-Ma'idah: 110-111",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 122,
+    "deskripsi": "Al-Ma'idah: 83-86",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 123,
+    "deskripsi": "Al-Ma'idah: 90-93",
+    "posisi": "atas",
+    "juz": 7
+  },
+  {
+    "halaman": 151,
+    "deskripsi": "Al-A'raf: 11-17",
+    "posisi": "bawah",
+    "juz": 8
+  },
+  {
+    "halaman": 153,
+    "deskripsi": "Al-A'raf: 26-28",
+    "posisi": "atas",
+    "juz": 8
+  },
+  {
+    "halaman": 154,
+    "deskripsi": "Al-A'raf: 33-36",
+    "posisi": "atas",
+    "juz": 8
+  },
+  {
+    "halaman": 155,
+    "deskripsi": "Al-A'raf: 43-46",
+    "posisi": "bawah",
+    "juz": 8
+  },
+  {
+    "halaman": 157,
+    "deskripsi": "Al-A'raf: 54-56",
+    "posisi": "tengah",
+    "juz": 8
+  },
+  {
+    "halaman": 142,
+    "deskripsi": "Al-An'am: 111-113",
+    "posisi": "atas",
+    "juz": 8
+  },
+  {
+    "halaman": 144,
+    "deskripsi": "Al-An'am: 127-129",
+    "posisi": "tengah",
+    "juz": 8
+  },
+  {
+    "halaman": 146,
+    "deskripsi": "Al-An'am: 141-143",
+    "posisi": "bawah",
+    "juz": 8
+  },
+  {
+    "halaman": 148,
+    "deskripsi": "Al-An'am: 151-152",
+    "posisi": "bawah",
+    "juz": 8
+  },
+  {
+    "halaman": 150,
+    "deskripsi": "Al-An'am: 160-163",
+    "posisi": "tengah",
+    "juz": 8
+  },
+  {
+    "halaman": 165,
+    "deskripsi": "Al-A'raf: 126-130",
+    "posisi": "tengah",
+    "juz": 9
+  },
+  {
+    "halaman": 170,
+    "deskripsi": "Al-A'raf: 156-157",
+    "posisi": "atas",
+    "juz": 9
+  },
+  {
+    "halaman": 172,
+    "deskripsi": "Al-A'raf: 170-173",
+    "posisi": "bawah",
+    "juz": 9
+  },
+  {
+    "halaman": 174,
+    "deskripsi": "Al-A'raf: 180-185",
+    "posisi": "atas",
+    "juz": 9
+  },
+  {
+    "halaman": 176,
+    "deskripsi": "Al-A'raf: 200-204",
+    "posisi": "tengah",
+    "juz": 9
+  },
+  {
+    "halaman": 176,
+    "deskripsi": "Al-A'raf: 206 - Al-Anfal: 3",
+    "posisi": "bawah",
+    "juz": 9
+  },
+  {
+    "halaman": 162,
+    "deskripsi": "Al-A'raf: 88-91",
+    "posisi": "atas",
+    "juz": 9
+  },
+  {
+    "halaman": 178,
+    "deskripsi": "Al-Anfal: 12-16",
+    "posisi": "tengah",
+    "juz": 9
+  },
+  {
+    "halaman": 177,
+    "deskripsi": "Al-Anfal: 2-6",
+    "posisi": "atas",
+    "juz": 9
+  },
+  {
+    "halaman": 180,
+    "deskripsi": "Al-Anfal: 28-30",
+    "posisi": "tengah",
+    "juz": 9
+  },
+  {
+    "halaman": 182,
+    "deskripsi": "Al-Anfal: 41-42",
+    "posisi": "atas",
+    "juz": 10
+  },
+  {
+    "halaman": 183,
+    "deskripsi": "Al-Anfal: 46-48",
+    "posisi": "atas",
+    "juz": 10
+  },
+  {
+    "halaman": 184,
+    "deskripsi": "Al-Anfal: 53-57",
+    "posisi": "atas",
+    "juz": 10
+  },
+  {
+    "halaman": 185,
+    "deskripsi": "Al-Anfal: 63-66",
+    "posisi": "atas",
+    "juz": 10
+  },
+  {
+    "halaman": 186,
+    "deskripsi": "Al-Anfal: 72-73",
+    "posisi": "atas",
+    "juz": 10
+  },
+  {
+    "halaman": 189,
+    "deskripsi": "At-Taubah: 18-20",
+    "posisi": "bawah",
+    "juz": 10
+  },
+  {
+    "halaman": 191,
+    "deskripsi": "At-Taubah: 29-30",
+    "posisi": "tengah",
+    "juz": 10
+  },
+  {
+    "halaman": 193,
+    "deskripsi": "At-Taubah: 40-41",
+    "posisi": "bawah",
+    "juz": 10
+  },
+  {
+    "halaman": 195,
+    "deskripsi": "At-Taubah: 51-55",
+    "posisi": "bawah",
+    "juz": 10
+  },
+  {
+    "halaman": 198,
+    "deskripsi": "At-Taubah: 71-73",
+    "posisi": "bawah",
+    "juz": 10
+  },
+  {
+    "halaman": 202,
+    "deskripsi": "At-Taubah: 94-96",
+    "posisi": "atas",
+    "juz": 11
+  },
+  {
+    "halaman": 203,
+    "deskripsi": "At-Taubah: 105-107",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 204,
+    "deskripsi": "At-Taubah: 111-112",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 206,
+    "deskripsi": "At-Taubah: 119-120",
+    "posisi": "atas",
+    "juz": 11
+  },
+  {
+    "halaman": 207,
+    "deskripsi": "At-Taubah: 128 - Yunus: 3",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 209,
+    "deskripsi": "Yunus: 7-11",
+    "posisi": "atas",
+    "juz": 11
+  },
+  {
+    "halaman": 211,
+    "deskripsi": "Yunus: 25-28",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 213,
+    "deskripsi": "Yunus: 40-45",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 215,
+    "deskripsi": "Yunus: 57-60",
+    "posisi": "tengah",
+    "juz": 11
+  },
+  {
+    "halaman": 221,
+    "deskripsi": "Hud: 3-6",
+    "posisi": "bawah",
+    "juz": 11
+  },
+  {
+    "halaman": 222,
+    "deskripsi": "Hud: 6-9",
+    "posisi": "atas",
+    "juz": 12
+  },
+  {
+    "halaman": 222,
+    "deskripsi": "Hud: 9-13",
+    "posisi": "bawah",
+    "juz": 12
+  },
+  {
+    "halaman": 226,
+    "deskripsi": "Hud: 41-44",
+    "posisi": "tengah",
+    "juz": 12
+  },
+  {
+    "halaman": 227,
+    "deskripsi": "Hud: 52-56",
+    "posisi": "bawah",
+    "juz": 12
+  },
+  {
+    "halaman": 229,
+    "deskripsi": "Hud: 69-73",
+    "posisi": "bawah",
+    "juz": 12
+  },
+  {
+    "halaman": 231,
+    "deskripsi": "Hud: 88-90",
+    "posisi": "bawah",
+    "juz": 12
+  },
+  {
+    "halaman": 234,
+    "deskripsi": "Hud: 112-116",
+    "posisi": "tengah",
+    "juz": 12
+  },
+  {
+    "halaman": 235,
+    "deskripsi": "Yusuf: 4-8",
+    "posisi": "bawah",
+    "juz": 12
+  },
+  {
+    "halaman": 237,
+    "deskripsi": "Yusuf: 18-21",
+    "posisi": "tengah",
+    "juz": 12
+  },
+  {
+    "halaman": 239,
+    "deskripsi": "Yusuf: 33-239",
+    "posisi": "tengah",
+    "juz": 12
+  },
+  {
+    "halaman": 242,
+    "deskripsi": "Yusuf: 53-58",
+    "posisi": "atas",
+    "juz": 13
+  },
+  {
+    "halaman": 243,
+    "deskripsi": "Yusuf: 64-67",
+    "posisi": "atas",
+    "juz": 13
+  },
+  {
+    "halaman": 243,
+    "deskripsi": "Yusuf: 67-69",
+    "posisi": "tengah",
+    "juz": 13
+  },
+  {
+    "halaman": 246,
+    "deskripsi": "Yusuf: 87-90",
+    "posisi": "atas",
+    "juz": 13
+  },
+  {
+    "halaman": 246,
+    "deskripsi": "Yusuf: 92 - Yunus: 97",
+    "posisi": "bawah",
+    "juz": 13
+  },
+  {
+    "halaman": 248,
+    "deskripsi": "Yusuf: 108-110",
+    "posisi": "tengah",
+    "juz": 13
+  },
+  {
+    "halaman": 249,
+    "deskripsi": "Ar-Ra'd: 2-4",
+    "posisi": "atas",
+    "juz": 13
+  },
+  {
+    "halaman": 250,
+    "deskripsi": "Ar-Ra'd: 11-13",
+    "posisi": "bawah",
+    "juz": 13
+  },
+  {
+    "halaman": 252,
+    "deskripsi": "Ar-Ra'd: 28-31",
+    "posisi": "bawah",
+    "juz": 13
+  },
+  {
+    "halaman": 256,
+    "deskripsi": "Ibrahim: 7-9",
+    "posisi": "atas",
+    "juz": 13
+  },
+  {
+    "halaman": 262,
+    "deskripsi": "Al-Hijr: 9-15",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 263,
+    "deskripsi": "Al-Hijr: 21-27",
+    "posisi": "atas",
+    "juz": 14
+  },
+  {
+    "halaman": 264,
+    "deskripsi": "Al-Hijr: 49-85",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 266,
+    "deskripsi": "Al-Hijr: 85-93",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 269,
+    "deskripsi": "An-Nahl: 18-24",
+    "posisi": "atas",
+    "juz": 14
+  },
+  {
+    "halaman": 270,
+    "deskripsi": "An-Nahl: 30-33",
+    "posisi": "tengah",
+    "juz": 14
+  },
+  {
+    "halaman": 272,
+    "deskripsi": "An-Nahl: 53-59",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 275,
+    "deskripsi": "An-Nahl: 78-80",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 278,
+    "deskripsi": "An-Nahl: 97-101",
+    "posisi": "tengah",
+    "juz": 14
+  },
+  {
+    "halaman": 280,
+    "deskripsi": "An-Nahl: 115-118",
+    "posisi": "bawah",
+    "juz": 14
+  },
+  {
+    "halaman": 282,
+    "deskripsi": "Al-Isra': 1-5",
+    "posisi": "atas",
+    "juz": 15
+  },
+  {
+    "halaman": 284,
+    "deskripsi": "Al-Isra': 23-27",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 285,
+    "deskripsi": "Al-Isra': 33-38",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 287,
+    "deskripsi": "Al-Isra': 50-54",
+    "posisi": "atas",
+    "juz": 15
+  },
+  {
+    "halaman": 289,
+    "deskripsi": "Al-Isra': 70-73",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 290,
+    "deskripsi": "Al-Isra': 80-84",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 293,
+    "deskripsi": "Al-Isra': 109 - Al-Kahf: 2",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 294,
+    "deskripsi": "Al-Kahf: 10-15",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 295,
+    "deskripsi": "Al-Kahf: 18-19",
+    "posisi": "tengah",
+    "juz": 15
+  },
+  {
+    "halaman": 297,
+    "deskripsi": "Al-Kahf: 29-31",
+    "posisi": "atas",
+    "juz": 15
+  },
+  {
+    "halaman": 302,
+    "deskripsi": "Al-Kahf: 75-79",
+    "posisi": "atas",
+    "juz": 16
+  },
+  {
+    "halaman": 302,
+    "deskripsi": "Al-Kahf: 83-89",
+    "posisi": "bawah",
+    "juz": 16
+  },
+  {
+    "halaman": 304,
+    "deskripsi": "Al-Kahf: 109 - Maryam: 4",
+    "posisi": "bawah",
+    "juz": 16
+  },
+  {
+    "halaman": 305,
+    "deskripsi": "Maryam: 4-8",
+    "posisi": "atas",
+    "juz": 16
+  },
+  {
+    "halaman": 306,
+    "deskripsi": "Maryam: 16-21",
+    "posisi": "atas",
+    "juz": 16
+  },
+  {
+    "halaman": 306,
+    "deskripsi": "Maryam: 25-29",
+    "posisi": "bawah",
+    "juz": 16
+  },
+  {
+    "halaman": 308,
+    "deskripsi": "Maryam: 41-46",
+    "posisi": "atas",
+    "juz": 16
+  },
+  {
+    "halaman": 309,
+    "deskripsi": "Maryam: 58-61",
+    "posisi": "tengah",
+    "juz": 16
+  },
+  {
+    "halaman": 311,
+    "deskripsi": "Maryam: 85-95",
+    "posisi": "tengah",
+    "juz": 16
+  },
+  {
+    "halaman": 313,
+    "deskripsi": "Taha: 25-38",
+    "posisi": "bawah",
+    "juz": 16
+  },
+  {
+    "halaman": 323,
+    "deskripsi": "Al-Anbiya': 18-24",
+    "posisi": "tengah",
+    "juz": 17
+  },
+  {
+    "halaman": 324,
+    "deskripsi": "Al-Anbiya': 35-39",
+    "posisi": "bawah",
+    "juz": 17
+  },
+  {
+    "halaman": 326,
+    "deskripsi": "Al-Anbiya': 52-60",
+    "posisi": "bawah",
+    "juz": 17
+  },
+  {
+    "halaman": 329,
+    "deskripsi": "Al-Anbiya': 83-87",
+    "posisi": "atas",
+    "juz": 17
+  },
+  {
+    "halaman": 331,
+    "deskripsi": "Al-Anbiya': 107-112",
+    "posisi": "bawah",
+    "juz": 17
+  },
+  {
+    "halaman": 332,
+    "deskripsi": "Al-Hajj: 5-5",
+    "posisi": "tengah",
+    "juz": 17
+  },
+  {
+    "halaman": 334,
+    "deskripsi": "Al-Hajj: 18-21",
+    "posisi": "atas",
+    "juz": 17
+  },
+  {
+    "halaman": 335,
+    "deskripsi": "Al-Hajj: 26-29",
+    "posisi": "atas",
+    "juz": 17
+  },
+  {
+    "halaman": 337,
+    "deskripsi": "Al-Hajj: 46-51",
+    "posisi": "bawah",
+    "juz": 17
+  },
+  {
+    "halaman": 339,
+    "deskripsi": "Al-Hajj: 60-64",
+    "posisi": "tengah",
+    "juz": 17
+  },
+  {
+    "halaman": 342,
+    "deskripsi": "Al-Mu'minun: 1-11",
+    "posisi": "atas",
+    "juz": 18
+  },
+  {
+    "halaman": 342,
+    "deskripsi": "Al-Mu'minun: 12-17",
+    "posisi": "tengah",
+    "juz": 18
+  },
+  {
+    "halaman": 345,
+    "deskripsi": "Al-Mu'minun: 51-59",
+    "posisi": "bawah",
+    "juz": 18
+  },
+  {
+    "halaman": 347,
+    "deskripsi": "Al-Mu'minun: 78-83",
+    "posisi": "atas",
+    "juz": 18
+  },
+  {
+    "halaman": 348,
+    "deskripsi": "Al-Mu'minun: 93-99",
+    "posisi": "atas",
+    "juz": 18
+  },
+  {
+    "halaman": 349,
+    "deskripsi": "Al-Mu'minun: 115 - An-Nur: 1",
+    "posisi": "bawah",
+    "juz": 18
+  },
+  {
+    "halaman": 350,
+    "deskripsi": "An-Nur: 2-6",
+    "posisi": "atas",
+    "juz": 18
+  },
+  {
+    "halaman": 352,
+    "deskripsi": "An-Nur: 21-24",
+    "posisi": "atas",
+    "juz": 18
+  },
+  {
+    "halaman": 353,
+    "deskripsi": "An-Nur: 30-31",
+    "posisi": "tengah",
+    "juz": 18
+  },
+  {
+    "halaman": 354,
+    "deskripsi": "An-Nur: 35-37",
+    "posisi": "bawah",
+    "juz": 18
+  },
+  {
+    "halaman": 362,
+    "deskripsi": "Al-Furqan: 21-26",
+    "posisi": "atas",
+    "juz": 19
+  },
+  {
+    "halaman": 363,
+    "deskripsi": "Al-Furqan: 43-47",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 365,
+    "deskripsi": "Al-Furqan: 58-62",
+    "posisi": "atas",
+    "juz": 19
+  },
+  {
+    "halaman": 365,
+    "deskripsi": "Al-Furqan: 63-68",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 365,
+    "deskripsi": "Al-Furqan: 67-72",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 367,
+    "deskripsi": "Asy-Syu'ara': 15-22",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 370,
+    "deskripsi": "Asy-Syu'ara': 78-90",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 371,
+    "deskripsi": "Asy-Syu'ara': 109-120",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 374,
+    "deskripsi": "Asy-Syu'ara': 181-190",
+    "posisi": "bawah",
+    "juz": 19
+  },
+  {
+    "halaman": 378,
+    "deskripsi": "An-Naml: 15-18",
+    "posisi": "atas",
+    "juz": 19
+  },
+  {
+    "halaman": 382,
+    "deskripsi": "An-Naml: 56-60",
+    "posisi": "atas",
+    "juz": 20
+  },
+  {
+    "halaman": 383,
+    "deskripsi": "An-Naml: 64-70",
+    "posisi": "atas",
+    "juz": 20
+  },
+  {
+    "halaman": 384,
+    "deskripsi": "An-Naml: 80-85",
+    "posisi": "atas",
+    "juz": 20
+  },
+  {
+    "halaman": 385,
+    "deskripsi": "An-Naml: 93 - Al-Qasas: 5",
+    "posisi": "tengah",
+    "juz": 20
+  },
+  {
+    "halaman": 386,
+    "deskripsi": "Al-Qasas: 7-10",
+    "posisi": "atas",
+    "juz": 20
+  },
+  {
+    "halaman": 388,
+    "deskripsi": "Al-Qasas: 24-27",
+    "posisi": "tengah",
+    "juz": 20
+  },
+  {
+    "halaman": 392,
+    "deskripsi": "Al-Qasas: 56-59",
+    "posisi": "tengah",
+    "juz": 20
+  },
+  {
+    "halaman": 394,
+    "deskripsi": "Al-Qasas: 77-79",
+    "posisi": "bawah",
+    "juz": 20
+  },
+  {
+    "halaman": 397,
+    "deskripsi": "Al-'Ankabut: 7-10",
+    "posisi": "atas",
+    "juz": 20
+  },
+  {
+    "halaman": 401,
+    "deskripsi": "Al-'Ankabut: 45-47",
+    "posisi": "bawah",
+    "juz": 20
+  },
+  {
+    "halaman": 402,
+    "deskripsi": "Al-'Ankabut: 47-49",
+    "posisi": "atas",
+    "juz": 21
+  },
+  {
+    "halaman": 403,
+    "deskripsi": "Al-'Ankabut: 57-60",
+    "posisi": "tengah",
+    "juz": 21
+  },
+  {
+    "halaman": 405,
+    "deskripsi": "Ar-Rum: 10-14",
+    "posisi": "bawah",
+    "juz": 21
+  },
+  {
+    "halaman": 406,
+    "deskripsi": "Ar-Rum: 21-23",
+    "posisi": "tengah",
+    "juz": 21
+  },
+  {
+    "halaman": 407,
+    "deskripsi": "Ar-Rum: 30-32",
+    "posisi": "bawah",
+    "juz": 21
+  },
+  {
+    "halaman": 412,
+    "deskripsi": "Luqman: 12-14",
+    "posisi": "atas",
+    "juz": 21
+  },
+  {
+    "halaman": 413,
+    "deskripsi": "Luqman: 27-29",
+    "posisi": "bawah",
+    "juz": 21
+  },
+  {
+    "halaman": 416,
+    "deskripsi": "As-Sajdah: 15-18",
+    "posisi": "tengah",
+    "juz": 21
+  },
+  {
+    "halaman": 419,
+    "deskripsi": "Al-Ahzab: 7-10",
+    "posisi": "atas",
+    "juz": 21
+  },
+  {
+    "halaman": 420,
+    "deskripsi": "Al-Ahzab: 21-24",
+    "posisi": "bawah",
+    "juz": 21
+  },
+  {
+    "halaman": 422,
+    "deskripsi": "Al-Ahzab: 31-33",
+    "posisi": "atas",
+    "juz": 22
+  },
+  {
+    "halaman": 422,
+    "deskripsi": "Al-Ahzab: 35-37",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 423,
+    "deskripsi": "Al-Ahzab: 41-46",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 426,
+    "deskripsi": "Al-Ahzab: 56-59",
+    "posisi": "atas",
+    "juz": 22
+  },
+  {
+    "halaman": 427,
+    "deskripsi": "Al-Ahzab: 70-74",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 428,
+    "deskripsi": "Saba': 6-9",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 430,
+    "deskripsi": "Saba': 15-18",
+    "posisi": "atas",
+    "juz": 22
+  },
+  {
+    "halaman": 431,
+    "deskripsi": "Saba': 26-30",
+    "posisi": "tengah",
+    "juz": 22
+  },
+  {
+    "halaman": 434,
+    "deskripsi": "Fatir: 3-6",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 436,
+    "deskripsi": "Fatir: 15-18",
+    "posisi": "bawah",
+    "juz": 22
+  },
+  {
+    "halaman": 442,
+    "deskripsi": "Yasin: 28-32",
+    "posisi": "atas",
+    "juz": 23
+  },
+  {
+    "halaman": 442,
+    "deskripsi": "Yasin: 36-39",
+    "posisi": "bawah",
+    "juz": 23
+  },
+  {
+    "halaman": 443,
+    "deskripsi": "Yasin: 48-51",
+    "posisi": "tengah",
+    "juz": 23
+  },
+  {
+    "halaman": 444,
+    "deskripsi": "Yasin: 60-64",
+    "posisi": "atas",
+    "juz": 23
+  },
+  {
+    "halaman": 445,
+    "deskripsi": "Yasin: 77-79",
+    "posisi": "tengah",
+    "juz": 23
+  },
+  {
+    "halaman": 446,
+    "deskripsi": "As-Saffat: 22-30",
+    "posisi": "bawah",
+    "juz": 23
+  },
+  {
+    "halaman": 448,
+    "deskripsi": "As-Saffat: 75-82",
+    "posisi": "bawah",
+    "juz": 23
+  },
+  {
+    "halaman": 449,
+    "deskripsi": "As-Saffat: 102-108",
+    "posisi": "bawah",
+    "juz": 23
+  },
+  {
+    "halaman": 451,
+    "deskripsi": "As-Saffat: 150-158",
+    "posisi": "bawah",
+    "juz": 23
+  },
+  {
+    "halaman": 459,
+    "deskripsi": "Az-Zumar: 6-7",
+    "posisi": "atas",
+    "juz": 23
+  },
+  {
+    "halaman": 462,
+    "deskripsi": "Az-Zumar: 32-35",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 463,
+    "deskripsi": "Az-Zumar: 42-44",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 464,
+    "deskripsi": "Az-Zumar: 53-55",
+    "posisi": "tengah",
+    "juz": 24
+  },
+  {
+    "halaman": 465,
+    "deskripsi": "Az-Zumar: 64-66",
+    "posisi": "tengah",
+    "juz": 24
+  },
+  {
+    "halaman": 467,
+    "deskripsi": "Ghafir: 3-5",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 469,
+    "deskripsi": "Ghafir: 18-20",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 472,
+    "deskripsi": "Ghafir: 44-46",
+    "posisi": "tengah",
+    "juz": 24
+  },
+  {
+    "halaman": 474,
+    "deskripsi": "Ghafir: 60-62",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 477,
+    "deskripsi": "Fussilat: 11-14",
+    "posisi": "bawah",
+    "juz": 24
+  },
+  {
+    "halaman": 480,
+    "deskripsi": "Fussilat: 30-33",
+    "posisi": "atas",
+    "juz": 24
+  },
+  {
+    "halaman": 482,
+    "deskripsi": "Fussilat: 47-49",
+    "posisi": "atas",
+    "juz": 25
+  },
+  {
+    "halaman": 483,
+    "deskripsi": "Asy-Syura: 5-7",
+    "posisi": "atas",
+    "juz": 25
+  },
+  {
+    "halaman": 484,
+    "deskripsi": "Asy-Syura: 11-13",
+    "posisi": "atas",
+    "juz": 25
+  },
+  {
+    "halaman": 485,
+    "deskripsi": "Asy-Syura: 19-21",
+    "posisi": "tengah",
+    "juz": 25
+  },
+  {
+    "halaman": 486,
+    "deskripsi": "Asy-Syura: 30-34",
+    "posisi": "bawah",
+    "juz": 25
+  },
+  {
+    "halaman": 489,
+    "deskripsi": "Az-Zukhruf: 10-13",
+    "posisi": "bawah",
+    "juz": 25
+  },
+  {
+    "halaman": 492,
+    "deskripsi": "Az-Zukhruf: 36-39",
+    "posisi": "atas",
+    "juz": 25
+  },
+  {
+    "halaman": 496,
+    "deskripsi": "Ad-Dukhan: 6-11",
+    "posisi": "atas",
+    "juz": 25
+  },
+  {
+    "halaman": 499,
+    "deskripsi": "Al-Jasiyah: 12-16",
+    "posisi": "bawah",
+    "juz": 25
+  },
+  {
+    "halaman": 500,
+    "deskripsi": "Al-Jasiyah: 22-24",
+    "posisi": "bawah",
+    "juz": 25
+  },
+  {
+    "halaman": 502,
+    "deskripsi": "Al-Jasiyah: 33-37",
+    "posisi": "atas",
+    "juz": 26
+  },
+  {
+    "halaman": 503,
+    "deskripsi": "Al-Ahqaf: 6-8",
+    "posisi": "atas",
+    "juz": 26
+  },
+  {
+    "halaman": 504,
+    "deskripsi": "Al-Ahqaf: 15-16",
+    "posisi": "atas",
+    "juz": 26
+  },
+  {
+    "halaman": 505,
+    "deskripsi": "Al-Ahqaf: 27-29",
+    "posisi": "bawah",
+    "juz": 26
+  },
+  {
+    "halaman": 507,
+    "deskripsi": "Muhammad: 7-11",
+    "posisi": "bawah",
+    "juz": 26
+  },
+  {
+    "halaman": 508,
+    "deskripsi": "Muhammad: 18-20",
+    "posisi": "bawah",
+    "juz": 26
+  },
+  {
+    "halaman": 509,
+    "deskripsi": "Muhammad: 29-31",
+    "posisi": "bawah",
+    "juz": 26
+  },
+  {
+    "halaman": 511,
+    "deskripsi": "Al-Fath: 1-4",
+    "posisi": "atas",
+    "juz": 26
+  },
+  {
+    "halaman": 512,
+    "deskripsi": "Al-Fath: 10-11",
+    "posisi": "atas",
+    "juz": 26
+  },
+  {
+    "halaman": 521,
+    "deskripsi": "Az-Zariyat: 20-24",
+    "posisi": "tengah",
+    "juz": 26
+  },
+  {
+    "halaman": 522,
+    "deskripsi": "Az-Zariyat: 31-37",
+    "posisi": "atas",
+    "juz": 27
+  },
+  {
+    "halaman": 522,
+    "deskripsi": "Az-Zariyat: 47-51",
+    "posisi": "bawah",
+    "juz": 27
+  },
+  {
+    "halaman": 523,
+    "deskripsi": "Az-Zariyat: 56-60",
+    "posisi": "atas",
+    "juz": 27
+  },
+  {
+    "halaman": 524,
+    "deskripsi": "At-Tur: 21-26",
+    "posisi": "tengah",
+    "juz": 27
+  },
+  {
+    "halaman": 525,
+    "deskripsi": "At-Tur: 35-39",
+    "posisi": "atas",
+    "juz": 27
+  },
+  {
+    "halaman": 526,
+    "deskripsi": "An-Najm: 26-29",
+    "posisi": "bawah",
+    "juz": 27
+  },
+  {
+    "halaman": 529,
+    "deskripsi": "Al-Qamar: 17-22",
+    "posisi": "tengah",
+    "juz": 27
+  },
+  {
+    "halaman": 531,
+    "deskripsi": "Ar-Rahman: 13-18",
+    "posisi": "bawah",
+    "juz": 27
+  },
+  {
+    "halaman": 535,
+    "deskripsi": "Al-Waqi'ah: 25-39",
+    "posisi": "atas",
+    "juz": 27
+  },
+  {
+    "halaman": 538,
+    "deskripsi": "Al-Hadid: 4-6",
+    "posisi": "atas",
+    "juz": 27
+  },
+  {
+    "halaman": 542,
+    "deskripsi": "Al-Mujadalah: 1-2",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 543,
+    "deskripsi": "Al-Mujadalah: 7-8",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 543,
+    "deskripsi": "Al-Mujadalah: 11-12",
+    "posisi": "bawah",
+    "juz": 28
+  },
+  {
+    "halaman": 546,
+    "deskripsi": "Al-Hasyr: 9-10",
+    "posisi": "bawah",
+    "juz": 28
+  },
+  {
+    "halaman": 548,
+    "deskripsi": "Al-Hasyr: 18-20",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 549,
+    "deskripsi": "Al-Mumtahanah: 4-5",
+    "posisi": "bawah",
+    "juz": 28
+  },
+  {
+    "halaman": 551,
+    "deskripsi": "As-Saff: 4-5",
+    "posisi": "bawah",
+    "juz": 28
+  },
+  {
+    "halaman": 554,
+    "deskripsi": "Al-Jumu'ah: 9-11",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 557,
+    "deskripsi": "At-Taghabun: 11-14",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 559,
+    "deskripsi": "At-Tahrim: 6-7",
+    "posisi": "atas",
+    "juz": 28
+  },
+  {
+    "halaman": 562,
+    "deskripsi": "Al-Mulk: 3-5",
+    "posisi": "atas",
+    "juz": 29
+  },
+  {
+    "halaman": 563,
+    "deskripsi": "Al-Mulk: 15-17",
+    "posisi": "atas",
+    "juz": 29
+  },
+  {
+    "halaman": 563,
+    "deskripsi": "Al-Mulk: 23-27",
+    "posisi": "bawah",
+    "juz": 29
+  },
+  {
+    "halaman": 564,
+    "deskripsi": "Al-Qalam: 4-11",
+    "posisi": "tengah",
+    "juz": 29
+  },
+  {
+    "halaman": 567,
+    "deskripsi": "Al-Haqqah: 13-18",
+    "posisi": "atas",
+    "juz": 29
+  },
+  {
+    "halaman": 570,
+    "deskripsi": "Nuh: 10-18",
+    "posisi": "bawah",
+    "juz": 29
+  },
+  {
+    "halaman": 580,
+    "deskripsi": "Al-Mursalat: 15-23",
+    "posisi": "bawah",
+    "juz": 29
+  },
+  {
+    "halaman": 581,
+    "deskripsi": "Al-Mursalat: 26-31",
+    "posisi": "atas",
+    "juz": 29
+  },
+  {
+    "halaman": 581,
+    "deskripsi": "Al-Mursalat: 40-47",
+    "posisi": "tengah",
+    "juz": 29
+  },
+  {
+    "halaman": 579,
+    "deskripsi": "Al-Insan: 7-17",
+    "posisi": "atas",
+    "juz": 29
+  },
+  {
+    "halaman": 583,
+    "deskripsi": "An-Naba': 31-40",
     "posisi": "atas",
     "juz": 30
   },
   {
-    "halaman": 583,
-    "deskripsi": "An-Nazi'at 1 - 26",
+    "halaman": 584,
+    "deskripsi": "An-Nazi'at: 26-39",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 585,
+    "deskripsi": "Abasa: 24-42",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 586,
+    "deskripsi": "At-Takwir: 19-29",
+    "posisi": "bawah",
+    "juz": 30
+  },
+  {
+    "halaman": 587,
+    "deskripsi": "Al-Infitar: 6-19",
     "posisi": "atas",
     "juz": 30
+  },
+  {
+    "halaman": 590,
+    "deskripsi": "Al-Buruj: 10-22",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 597,
+    "deskripsi": "At-Tin: 4 - Al-'Alaq: 4",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 597,
+    "deskripsi": "Al-'Alaq: 5-19",
+    "posisi": "bawah",
+    "juz": 30
+  },
+  {
+    "halaman": 598,
+    "deskripsi": "Al-Qadr: 3 - Al-Bayyinah: 5",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 604,
+    "deskripsi": "Al-Falaq: 3 - An-Nas: 6",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 582,
+    "deskripsi": "An-Naba': 1-20",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 582,
+    "deskripsi": "An-Naba': 16-30",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 583,
+    "deskripsi": "An-Nazi'at: 1-15",
+    "posisi": "bawah",
+    "juz": 30
+  },
+  {
+    "halaman": 584,
+    "deskripsi": "An-Nazi'at: 20-36",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 585,
+    "deskripsi": "Abasa: 1-24",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 588,
+    "deskripsi": "Al-Mutaffifin: 14-28",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 586,
+    "deskripsi": "At-Takwir: 1-18",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 586,
+    "deskripsi": "At-Takwir: 14-27",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 593,
+    "deskripsi": "Al-Fajr: 14-593",
+    "posisi": "tengah",
+    "juz": 30
+  },
+  {
+    "halaman": 595,
+    "deskripsi": "Asy-Syams: 9 - Al-Lail: 7",
+    "posisi": "atas",
+    "juz": 30
+  },
+  {
+    "halaman": 3,
+    "deskripsi": "Al-Baqarah: 15-20",
+    "posisi": "bawah",
+    "juz": 1
+  },
+  {
+    "halaman": 5,
+    "deskripsi": "Al-Baqarah: 25-26",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 7,
+    "deskripsi": "Al-Baqarah: 42-48",
+    "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 8,
+    "deskripsi": "Al-Baqarah: 55-58",
+    "posisi": "bawah",
+    "juz": 1
+  },
+  {
+    "halaman": 11,
+    "deskripsi": "Al-Baqarah: 75-79",
+    "posisi": "bawah",
+    "juz": 1
+  },
+  {
+    "halaman": 15,
+    "deskripsi": "Al-Baqarah: 98-101",
+    "posisi": "bawah",
+    "juz": 1
+  },
+  {
+    "halaman": 18,
+    "deskripsi": "Al-Baqarah: 115-119",
+    "posisi": "tengah",
+    "juz": 1
+  },
+  {
+    "halaman": 21,
+    "deskripsi": "Al-Baqarah: 136-139",
+    "posisi": "atas",
+    "juz": 1
+  },
+  {
+    "halaman": 22,
+    "deskripsi": "Al-Baqarah: 144-145",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 23,
+    "deskripsi": "Al-Baqarah: 148-150",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 24,
+    "deskripsi": "Al-Baqarah: 155-159",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 25,
+    "deskripsi": "Al-Baqarah: 165-167",
+    "posisi": "tengah",
+    "juz": 2
+  },
+  {
+    "halaman": 28,
+    "deskripsi": "Al-Baqarah: 184-185",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 30,
+    "deskripsi": "Al-Baqarah: 195-196",
+    "posisi": "tengah",
+    "juz": 2
+  },
+  {
+    "halaman": 31,
+    "deskripsi": "Al-Baqarah: 201-204",
+    "posisi": "bawah",
+    "juz": 2
+  },
+  {
+    "halaman": 41,
+    "deskripsi": "Al-Baqarah: 249-250",
+    "posisi": "atas",
+    "juz": 2
+  },
+  {
+    "halaman": 47,
+    "deskripsi": "Al-Baqarah: 275-277",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 47,
+    "deskripsi": "Al-Baqarah: 277-281",
+    "posisi": "tengah",
+    "juz": 3
+  },
+  {
+    "halaman": 50,
+    "deskripsi": "Ali 'Imran: 2-6",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 51,
+    "deskripsi": "Ali 'Imran: 14-15",
+    "posisi": "tengah",
+    "juz": 3
+  },
+  {
+    "halaman": 52,
+    "deskripsi": "Ali 'Imran: 21-24",
+    "posisi": "bawah",
+    "juz": 3
+  },
+  {
+    "halaman": 61,
+    "deskripsi": "Ali 'Imran: 85-89",
+    "posisi": "atas",
+    "juz": 3
+  },
+  {
+    "halaman": 81,
+    "deskripsi": "An-Nisa': 23-23",
+    "posisi": "bawah",
+    "juz": 4
+  },
+  {
+    "halaman": 101,
+    "deskripsi": "An-Nisa': 147-150",
+    "posisi": "bawah",
+    "juz": 5
   }
 ]
