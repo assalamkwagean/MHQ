@@ -24,20 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Highlighter Toggle Logic ---
     const setHighlighterState = (isActive) => {
         isHighlighterActive = isActive;
-        highlighterToggle.classList.toggle('active', isActive);
+        highlighterToggle.checked = isActive;
         localStorage.setItem('highlighterActive', isActive);
-        if (!isActive) {
-            pdfHighlighter.style.visibility = 'hidden';
-        }
+        if (!isActive) pdfHighlighter.style.visibility = 'hidden';
     };
-
-    // Initial state setup
-    const initialHighlighterState = localStorage.getItem('highlighterActive') === 'true';
-    setHighlighterState(initialHighlighterState);
-
-    highlighterToggle.addEventListener('click', () => {
-        setHighlighterState(!isHighlighterActive);
-    });
+    setHighlighterState(localStorage.getItem('highlighterActive') === 'true');
+    highlighterToggle.addEventListener('change', (e) => setHighlighterState(e.target.checked));
 
     // --- Menu Type Toggle Logic ---
     const menuTypeToggle = document.getElementById('menu-type-toggle');

@@ -145,12 +145,6 @@ body, html {
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-#highlighter-toggle.active {
-    background-color: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
-}
-
 .settings-btn:hover {
     transform: rotate(45deg);
 }
@@ -811,6 +805,12 @@ input:checked + .slider:after {
 
 #highlighter-toggle:checked + .switch-highlighter svg {
   transform: scale(1.1);
+}
+
+.switch-highlighter {
+    padding: 0;
+    width: 40px;
+    height: 40px;
 }
 
 /* --- Responsive Design --- */
