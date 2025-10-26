@@ -24,12 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Highlighter Toggle Logic ---
     const setHighlighterState = (isActive) => {
         isHighlighterActive = isActive;
-        highlighterToggle.checked = isActive;
+        highlighterToggle.classList.toggle('active', isActive);
         localStorage.setItem('highlighterActive', isActive);
-        if (!isActive) pdfHighlighter.style.visibility = 'hidden';
+        if (!isActive) {
+            pdfHighlighter.style.visibility = 'hidden';
+        }
     };
-    setHighlighterState(localStorage.getItem('highlighterActive') === 'true');
-    highlighterToggle.addEventListener('change', (e) => setHighlighterState(e.target.checked));
+
+    // Initial state setup
+    const initialHighlighterState = localStorage.getItem('highlighterActive') === 'true';
+    setHighlighterState(initialHighlighterState);
+
+    highlighterToggle.addEventListener('click', () => {
+        setHighlighterState(!isHighlighterActive);
+    });
 
     // --- Menu Type Toggle Logic ---
     const menuTypeToggle = document.getElementById('menu-type-toggle');
@@ -222,12 +230,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch('soal.json').then(response => response.json()).then(data => {
         const menuSoalContainer = document.getElementById('menu-soal');
+
+        const createAccordionIcon = () => {
+            const iconSpan = document.createElement('span');
+            iconSpan.classList.add('accordion-icon');
+            iconSpan.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+            return iconSpan;
+        };
+
         data.kategori.forEach((kategori, katIndex) => {
             const kategoriDiv = document.createElement('div');
             kategoriDiv.classList.add('kategori-container');
+
             const kategoriTitle = document.createElement('div');
             kategoriTitle.classList.add('kategori-title');
-            kategoriTitle.textContent = kategori.nama;
+            const kategoriTitleText = document.createElement('span');
+            kategoriTitleText.textContent = kategori.nama;
+            kategoriTitle.appendChild(kategoriTitleText);
+            kategoriTitle.appendChild(createAccordionIcon());
+
             kategoriDiv.appendChild(kategoriTitle);
             const paketContainer = document.createElement('div');
             paketContainer.classList.add('paket-container');
@@ -235,7 +256,11 @@ document.addEventListener('DOMContentLoaded', () => {
             kategori.paket.forEach((paket, pakIndex) => {
                 const paketTitle = document.createElement('div');
                 paketTitle.classList.add('paket-title');
-                paketTitle.textContent = paket.nama;
+                const paketTitleText = document.createElement('span');
+                paketTitleText.textContent = paket.nama;
+                paketTitle.appendChild(paketTitleText);
+                paketTitle.appendChild(createAccordionIcon());
+
                 paketContainer.appendChild(paketTitle);
                 const soalContainer = document.createElement('div');
                 soalContainer.classList.add('soal-container');

@@ -120,69 +120,39 @@ body, html {
 }
 
 
-#theme-toggle {
+/* --- Tombol Kontrol Ikon SVG --- */
+.controls-group button, .controls-group a {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1.3em;
     color: var(--text-secondary);
-    padding: 8px 12px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px var(--shadow-color);
     height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
+    padding: 0;
+    text-decoration: none;
 }
 
-#theme-toggle:hover, #fullscreen-toggle:hover {
+.controls-group button:hover, .controls-group a:hover {
     background-color: var(--border-color);
     color: var(--accent-color);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-#fullscreen-toggle {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.3em;
-    color: var(--text-secondary);
-    padding: 8px 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-}
-
-.settings-btn {
-    font-size: 1.4em;
-    text-decoration: none;
-    color: var(--text-secondary);
-    transition: all 0.3s ease;
-    padding: 8px 12px;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
+#highlighter-toggle.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
 }
 
 .settings-btn:hover {
-    transform: rotate(45deg) translateY(-1px);
-    color: var(--accent-color);
-    background-color: var(--border-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
+    transform: rotate(45deg);
 }
 
 /* --- Accordion Menu --- */
@@ -205,6 +175,9 @@ body, html {
     color: var(--text-primary);
     box-shadow: 0 2px 4px var(--shadow-color);
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .kategori-title:hover, .paket-title:hover {
@@ -213,19 +186,14 @@ body, html {
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.kategori-title::before, .paket-title::before {
-    content: '▶';
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
+.accordion-icon {
     transition: transform 0.3s ease;
     color: var(--text-secondary);
-    font-size: 0.8em;
 }
 
-.kategori-title.active::before, .paket-title.active::before {
-    transform: translateY(-50%) rotate(90deg);
+.kategori-title.active .accordion-icon,
+.paket-title.active .accordion-icon {
+    transform: rotate(90deg);
 }
 
 .paket-container, .soal-container {
@@ -480,9 +448,9 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
+    padding: 15px 0;
     border-bottom: 2px solid var(--border-color);
-    gap: 18px;
+    gap: 15px;
     margin-bottom: 10px;
 }
 
@@ -497,13 +465,7 @@ body, html {
 .controls-group {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.highlighter-toggle-container {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
+    gap: 10px;
 }
 
 /* --- Menu Soal Acak --- */
